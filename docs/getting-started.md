@@ -1,7 +1,7 @@
 
 ## Non-Developers
 
-If you do not want to code to make a map or store your data, have a look at **[XYZ Studio](https://xyzmaps.github.io/xyz-studio**. No coding required.
+If you do not want to code to make a map or store your data, have a look at **[XYZ Studio](https://xyzmaps.github.io/xyz-studio)**. No coding required.
 
 ## Developers
 

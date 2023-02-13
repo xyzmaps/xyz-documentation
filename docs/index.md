@@ -1,3 +1,16 @@
+!!! success "Open Source forking and cleaning in progress"
+
+    This documentation is currently being updated to reflect the fork and resulting changes
+    in moving to a **free and open source version of XYZ Maps**. 
+    
+    That means all references to proprietary
+    links, APIs and authentication are removed and where possible redirected to an open version.
+    Also a lot of the marketing speak and terminology will be cleaned.
+
+    While this is going on, links might be broken and command described in the documentation
+    might not work or work differently. Stay tuned!
+
+
 ## Make great maps easier and faster
 
 XYZ Maps is an open, interoperable and real-time location data management service 
@@ -9,11 +22,6 @@ manage map data and build great maps. It is built around standards like
 [GeoJSON](http://geojson.org/) and designed to be **open** and **interoperable**
 with many other offerings. Most important of all, HERE Data Hub offers
 real-time **live** interaction with location data.
-
-It's built from the ground up with productivity in mind. We have taken code and concepts used internally at
-HERE Technologies for years in some of the most demanding
-projects and want to share that with the community of developers, cartographers and
-enthusiasts to enable everyone to build better maps.
 
 ## Quick start
 
