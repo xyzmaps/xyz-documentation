@@ -1,20 +1,12 @@
 # Commands
 
 In this section we give you a quick overview of the most commonly used commands to interact
-with XYZ Spaces from the HERE Data Hub CLI.
+with XYZ Spaces from the XYZ Maps CLI.
 
-
-> #### Warning 
-> Configuration is required for HERE Data Hub CLI to work. For additional information, see
-> [Get a HERE Account](https://developer.here.com/documentation/identity-access-management/dev_guide/topics/obtain-user-credentials.html).
-> If you have skipped the previous section now is the time to go back and verify that
-> HERE Data Hub CLI is properly configured with your developer identity. In case you are not
-> certain, you can run `here configure verify` to check if your credentials are valid.
-  
-    
+   
 ## Supported Commands
 
-HERE Data Hub CLI is built to be modular and extensible, so it is entirely possible that when you
+XYZ Maps CLI is built to be modular and extensible, so it is entirely possible that when you
 use the tool it has already learned a couple of new tricks.
 
 The general structure is that you call the `here` command followed by *command*
@@ -23,48 +15,30 @@ from.
 
 ### Help
 
-You can always call up help on the HERE Data Hub CLI either by not providing any parameter at all or
+You can always call up help on the XYZ Maps CLI either by not providing any parameter at all or
 by using the `--help` switch.
 
 ```
-here --help
+xyzmaps --help
 ```
 
-### Configure
 
-See [Get a HERE Account](https://developer.here.com/documentation/identity-access-management/dev_guide/topics/obtain-user-credentials.html) for additional information regarding authentication and configuration procedures.
+### Spaces
 
-As explained earlier, HERE Data Hub CLI needs to know you to interact with your XYZ Spaces. You can use
-
-```
-here configure account
-```
-to configure with the e-mail address and password you use for your HERE account.
-
-You can also run
-
-```
-here configure verify
-```
-
-to check if the credentials provided can be used to interact with HERE APIs.
-
-### XYZ
-
-The `xyz` command is used to interact with XYZ Spaces.
+The `space` command is used to interact with XYZ Spaces.
 
 #### List all Spaces
 
 To list all Spaces you have access to (with or without Schema Validation) you can use
 
 ```
-here xyz list
+xyzmaps space list
 ```
 
 #### Create a New Space
 
 ```
-here xyz create -t "sample test xyz" -d "sample creation"
+xyzmaps space create -t "sample test xyz" -d "sample creation"
 ```
 
 When you create a new Space, the SpaceID will be generated automatically.
@@ -88,10 +62,6 @@ When you create a new Space, the SpaceID will be generated automatically.
 
 `-s <schema definition>` Applies a schema validation json file to space. The schema definition can be in the form of a web address or a local schema json file. Features that do not match this schema will not be uploaded. 
 
-
-> #### Note
-> This is a Pro feature that requires a license. [Learn more about XYZ Pro features here](../../xyz_pro). 
-    
 
 #### Upload/Update Data to a Space
 
@@ -128,11 +98,11 @@ When you create a new Space, the SpaceID will be generated automatically.
 
 Upload a GeoJSON file to a new space. XYZ will automatically generate a space ID and display it for you.
 
-    here xyz upload -f /Users/xyz/data.geojson
+    xyzmaps space upload -f /Users/xyz/data.geojson
 
 Upload a GeoJSON file to an existing space.
 
-    here xyz upload SPACE_ID -f /Users/xyz/data.geojson
+    xyzmaps space upload SPACE_ID -f /Users/xyz/data.geojson
 
 
 
@@ -160,7 +130,7 @@ Upload a GeoJSON file to an existing space.
 ##### Upload a CSV file
 
 
-    here xyz upload -f /Users/xyz/data.csv
+    xyzmaps space upload -f /Users/xyz/data.csv
 
 
 XYZ will attempt to choose the columns containing the latitude and longitude fields based on well known names including:
@@ -170,7 +140,7 @@ XYZ will attempt to choose the columns containing the latitude and longitude fie
 
 If your csv uses different names, you can specify the latitude field with `-y` and longitude with `-x`.
 
-    here xyz upload -f /Users/xyz/data.csv -x the_lon -y the_lat
+    xyzmaps space upload -f /Users/xyz/data.csv -x the_lon -y the_lat
 
 If the csv combines coordinates into a single field, such as
     
@@ -182,7 +152,7 @@ or
 
 you can specify the name of that column with `-z`.
 
-    here xyz upload -f /Users/xyz/data.csv -z points
+    xyzmaps space upload -f /Users/xyz/data.csv -z points
 
 Rows that have `0,0` or `null` values in the designated latitude and longitude columns will be tagged with `null_island`. They will not be displayed on the map, but you can access them via the API (or in geojson.tools) by appending `&tags=null_island` so you can inspect and repair the records.
 
@@ -218,7 +188,7 @@ If your features are small, like you might see in a GeoJSON file containing poin
 
 To upload very large CSV and GeoJSON files to your XYZ space, will will need to use `-s` -- this will stream the file and avoid Node.js memory errors. (It will also be considerably faster than the standard upload method.)
 
-    here xyz upload YOUR_SPACE_ID -f /Users/xyz/big_data.csv -s
+    xyzmaps space upload YOUR_SPACE_ID -f /Users/xyz/big_data.csv -s
 
 
 
@@ -229,7 +199,7 @@ To upload very large CSV and GeoJSON files to your XYZ space, will will need to 
 ***
     
 > #### Info
-> HERE XYZ is a database. Databases trade off storage space for speed, and your data will always 
+> xyzmaps space is a database. Databases trade off storage space for speed, and your data will always 
 > take up more space in XYZ than it does in a static file. When a file is uploaded into an XYZ Space,
 > features, their properties, and the geometries are broken out into multiple tables, indexed and
 > tagged. All of this lets you query your geospatial data on demand, and access it dynamically as
@@ -241,7 +211,7 @@ To upload very large CSV and GeoJSON files to your XYZ space, will will need to 
 ##### Upload a Shapefile
 
 ```
-here xyz upload -f /Users/dhatb/data.shp
+xyzmaps space upload -f /Users/dhatb/data.shp
 ```
 
 
@@ -257,8 +227,8 @@ More tips in the [Working with Shapefiles](../shapefiles) tutorial.
     
 > #### Hint
 > Instead of passing the content as a file with `-f` option you can also pipe the output 
-> of  another command directly into the input stream of the HERE Data Hub CLI like
-> `cmd | here xyz upload YOUR_SPACE_ID`.
+> of  another command directly into the input stream of the XYZ Maps CLI like
+> `cmd | xyzmaps space upload YOUR_SPACE_ID`.
    
    
 
@@ -266,7 +236,7 @@ More tips in the [Working with Shapefiles](../shapefiles) tutorial.
 ##### Upload with a Unique ID
 
 ```
-here xyz upload -f data.csv -i unique_id
+xyzmaps space upload -f data.csv -i unique_id
 ```
 
 Upload data to an XYZ space with a feature ID based on the feature's property `unique_id`. 
@@ -301,7 +271,7 @@ Tags are special properties that can be added to a feature that makes it easy to
 ###### Assign Tags Interactively
 
 ```
-here xyz upload -f file.geojson -a
+xyzmaps space upload -f file.geojson -a
 ```
 
 Uploads data and allows users to select tags from a list of feature keynames, with a preview of the first few values. 
@@ -309,9 +279,9 @@ Uploads data and allows users to select tags from a list of feature keynames, wi
 ###### Assign Tags Using Property Names
 
 ```
-here xyz upload -f file.geojson -p treatment
+xyzmaps space upload -f file.geojson -p treatment
 ```
-Uploads data and adds the value of the selected feature property as tag. These tags can be used to filter data when querying the HERE XYZ API. The tags will be stored as `propertyname@value`. This is most effective when the property consists of a limited number of qualitative values.
+Uploads data and adds the value of the selected feature property as tag. These tags can be used to filter data when querying the xyzmaps space API. The tags will be stored as `propertyname@value`. This is most effective when the property consists of a limited number of qualitative values.
 
 ###### Response
 
@@ -322,7 +292,7 @@ treatment@green_paint, treatment@sharrows, treatment@hit_post
 #### Show Contents of a Space
 
 ```
-here xyz show YOUR_SPACE_ID
+xyzmaps space show YOUR_SPACE_ID
 ```
 
 Show the objects of a space in table, filter by tags or property values, or open the space in other tools.
@@ -349,22 +319,22 @@ Show the objects of a space in table, filter by tags or property values, or open
 
 Using `show` on a large space will generate a long table. You can see the raw GeoJSON of the first 5000 features using `-r`. This can also be very long. You may want to direct this output to a file.
 
-    here xyz show spaceID -r > my.geojson
+    xyzmaps space show spaceID -r > my.geojson
 
 If your space contains a few hundred to a few thousand features, you can open the space in geojson.tools, a data preview tool, using `show -w`. Larger spaces can be previewed in [XYZ Space Invader](../space-invader), a Tangram-based tool from XYZ Labs, using `show -v`.
 
 You can filter tags from XYZ using tags with `-t`:
 
-`here xyz show spaceID -t my_tag` (records with `my_tag` will be printed in the console)
-`here xyz show spaceID -w -t my_tag` (records with `my_tag` will be opened in geojson.tools)
-`here xyz show spaceID -v -t my_tag` (records with `my_tag` will be opened in XYZ Space Invader)
+`xyzmaps space show spaceID -t my_tag` (records with `my_tag` will be printed in the console)
+`xyzmaps space show spaceID -w -t my_tag` (records with `my_tag` will be opened in geojson.tools)
+`xyzmaps space show spaceID -v -t my_tag` (records with `my_tag` will be opened in XYZ Space Invader)
 
 ##### Property Search 
 
 If a property has been indexed by XYZ, you can filter them with `-s` or `--search`. The property name must be prefixed by `p.`:
 
-    here xyz show spaceID -s "p.property_name>value"
-    here xyz show spaceID -s "p.name=John,Tom+p.age<50+p.phone='9999999'+p.zipcode=123456" -w
+    xyzmaps space show spaceID -s "p.property_name>value"
+    xyzmaps space show spaceID -s "p.name=John,Tom+p.age<50+p.phone='9999999'+p.zipcode=123456" -w
     
 - Operators include `=,!=,>,>=,<,<=`
 - Search expressions must be enclosed in double quotes, e.g. `"p.property_name>value"`
@@ -384,7 +354,7 @@ If a property has been indexed by XYZ, you can filter them with `-s` or `--searc
 
 You can use `show -p` or `--prop` to filter the properties that get returned by the API. This is useful when your features have a large number of properties, and you only need to return some of them along with with the geometry.
 
-    here xyz show -p p.property1,p.property2 -w
+    xyzmaps space show -p p.property1,p.property2 -w
     
 
 > #### Note 
@@ -406,7 +376,7 @@ These results are most easily viewable using `show -w`.
 #### Delete a Space
 
 ```
-here xyz delete YOUR_SPACE_ID
+xyzmaps space delete YOUR_SPACE_ID
 ```
 
 Delete a Space you have access to.
@@ -414,7 +384,7 @@ Delete a Space you have access to.
 #### Clear a Space
 
 ```
-here xyz clear YOUR_SPACE_ID
+xyzmaps space clear YOUR_SPACE_ID
 ```
 
 Clear data from your space. You clear the entire space, or clear by tag or feature ID.
@@ -431,7 +401,7 @@ Clear data from your space. You clear the entire space, or clear by tag or featu
 #### List All Tokens
 
 ```
-here xyz token
+xyzmaps space token
 ```
 
 Lists all the xyz token you use:
@@ -466,23 +436,23 @@ You can use the `config` command to get and update information about your spaces
 
 ##### Get Information about a Space
 
-    here xyz config SPACE_ID
+    xyzmaps space config SPACE_ID
     
 This will print a table with the title, desciption, and other high-level information about the space.
 
 You can see the raw `json` response from the `/statistics` endpoing using `-r`:
 
-        here xyz config SPACE_ID -r
+        xyzmaps space config SPACE_ID -r
 
 ##### Get a List of Tags and Properties Used in a Space
 
 You can get more details about a space by using the `--stats` option. This will return the number of features, the size of the space, the bbox, geometry types, names and counts of tags, as well as the names of properties (and if they can be accessed via Property Search).
 
-    here xyz config SPACE_ID --stats
+    xyzmaps space config SPACE_ID --stats
 
 
 > #### Hint
-> Use `here xyz analyze` to get a count and list of values of a property in a space. 
+> Use `xyzmaps space analyze` to get a count and list of values of a property in a space. 
 > This is best suited for qualitative values. Only the first 500,000 features in a space 
 > will be analyzed. 
     
@@ -491,17 +461,17 @@ You can get more details about a space by using the `--stats` option. This will 
 
 To update the title and/or description of a space:
 
-    here xyz config -t "A meaningful title for a space" -d "additional details about this space that future you will appreciate 6 months from now"
+    xyzmaps space config -t "A meaningful title for a space" -d "additional details about this space that future you will appreciate 6 months from now"
 
 ##### Share a Space
 
 You can share a space with other users using the `--shared` option. If they have an XYZ account, they will be able to read from that space using their own tokens (and any data transfer will be charged to their XYZ account).
 
-    here xyz config spaceID --shared true
+    xyzmaps space config spaceID --shared true
     
 You can disable sharing by passing a `false` parameter:
 
-    here xyz config spaceID --shared false
+    xyzmaps space config spaceID --shared false
 
 
 ##### Update, Upload, or Delete a Schema Definition
@@ -516,12 +486,12 @@ A schema validation json file can be configured for a space. The schema definiti
 
 
 ```
-here xyz config YOUR_SPACE_ID -s schema_definition.json
+xyzmaps space config YOUR_SPACE_ID -s schema_definition.json
 ```
 To delete a schema from a space:
 
 ```
-here xyz config YOUR_SPACE_ID -s
+xyzmaps space config YOUR_SPACE_ID -s
 ```
 
 #### Virtual Spaces
@@ -534,18 +504,18 @@ here xyz config YOUR_SPACE_ID -s
 
 Virtual Spaces give users access to multiple spaces with one ID. Group lets you bundle your spaces together, and changes get written back to their original spaces. Associate lets you make your own personal edits to a shared space or one with public data, merging the properties of objects with the same feature ID.
 
-    here xyz virtualize|vs -a|-g space1,space2
+    xyzmaps space virtualize|vs -a|-g space1,space2
     
     
 ##### Group
 
-    here xyz virtualize -g space1,space2,...
+    xyzmaps space virtualize -g space1,space2,...
     
 `group` takes multiple XYZ spaces and presents them via a single XYZ space ID. Duplicates can occur. Any updates will be made to the original spaces.
 
 ##### Associate
 
-    here xyz vs -a space1,space2
+    xyzmaps space vs -a space1,space2
     
 `associate` takes features from `space1` and merges their properties into features with the same feature id in `space2`.
 
@@ -555,7 +525,7 @@ One way of using `virtualize` is to upload CSVs of census data with unique geoID
 
 The `join` command simplifies use of virtual spaces when using CSV tables and existing geometries. You can designate a CSV column to be the feature ID, and use the `associate` virtual spaces option to join it with a space with geometries that use the same set of feature IDs. 
 
-    here xyz join space_with_geometries -f data_table.csv -k column_with_id
+    xyzmaps space join space_with_geometries -f data_table.csv -k column_with_id
 
 
 > #### Note
@@ -563,7 +533,7 @@ The `join` command simplifies use of virtual spaces when using CSV tables and ex
 > geojson.tools via `show -w`.
 
     
-    You can update this "csv space" using `here xyz upload spaceID -f new.csv -k id --noGeom` and the next time the virtual space ID is references, the properties will contain the updated values.
+    You can update this "csv space" using `xyzmaps space upload spaceID -f new.csv -k id --noGeom` and the next time the virtual space ID is references, the properties will contain the updated values.
     
 #### Spatial Search
 
@@ -577,7 +547,7 @@ The `join` command simplifies use of virtual spaces when using CSV tables and ex
 > [Learn more about XYZ Pro features here](../xyz_pro).
 
 
-The CLI has access to a number of convenient geopspatial data functions via the `here xyz gis` command. Some of these functions add properties to the original features, while others create data in a new space. 
+The CLI has access to a number of convenient geopspatial data functions via the `xyzmaps space gis` command. Some of these functions add properties to the original features, while others create data in a new space. 
 
 - `--area` uses `turf.js` to calculate the area of polygons, and saves this as a set of new properties in each polygon feature. `xyz_area_sqmiles`,`xyz_area_sqkm` are rounded for display convenience, and `xyz_area_sqm` is not rounded.
 - `--length` uses `turf.js` to calculate the length of lines in a space, and saves this as a set of new properties in each linestring feature, `xyz_length_miles`,`xyz_length_km` which are rounded for display convenience, and `xyz_length_m` which is not rounded.
@@ -587,21 +557,15 @@ The CLI has access to a number of convenient geopspatial data functions via the 
 
 #### Hexbins
 
-
-> #### Note 
-> Your account needs access to the XYZ Pro Services.
-> [Learn more about XYZ Pro features here](../../xyz_pro).
-
-
 Hexbins are a data simplification method that makes it easier to visualize large datasets of point features at low zoom levels (continent, country, state/province). A series of hexagon grids are created and the points that fall inside each are counted and written to a new XYZ space, and statistics are calculated across the hexbin grid. 
 
 These hexagons (or their centroids) and their statistics can be quickly displayed in place of the raw data that might overwhelm a renderer. Default colors indicating relative "occupancy" are generated for convenience of display.
 
- `here xyz hexbin spaceID -z 5-10` create hexbins appropriate for zoom levels 5 through 10
+ `xyzmaps space hexbin spaceID -z 5-10` create hexbins appropriate for zoom levels 5 through 10
 
- `here xyz hexbin spaceID -z 8,10,12` create hexbins appropriate for zoom 8,10,12
+ `xyzmaps space hexbin spaceID -z 8,10,12` create hexbins appropriate for zoom 8,10,12
 
- `here xyz hexbin spaceID -c 100,1000,100000` create hexbins that are 100 meters, 1km and 10km wide
+ `xyzmaps space hexbin spaceID -c 100,1000,100000` create hexbins that are 100 meters, 1km and 10km wide
 
 Hexbins are tagged by zoom level, width, and type, making it easy to extract one set from the hexbin space for display and comparison.
 
@@ -643,7 +607,7 @@ Hexbin features contain various values that can help with analysis and visualiza
 
 If a property is qualitative (property values, income, population), in addition to counting points, XYZ Hexbins can add up the value of the properties in each hexbin as well as calculate the average.
 
-    here xyz hexbin spaceID -z 10 -a incidents
+    xyzmaps space hexbin spaceID -z 10 -a incidents
 
 ```
         "sum": {
@@ -657,7 +621,7 @@ If a property is qualitative (property values, income, population), in addition 
 ##### Hexbin Subcounts
 You can also specify a `subcount` within each hexbin based upon the count of the values of particular property.
 
-    `here xyz hexbin spaceID -z 8-12 -p business_type`
+    `xyzmaps space hexbin spaceID -z 8-12 -p business_type`
     
 This would create a `subcount` object in each hexbin, which would contain the relative count of that property value across the hexbin grid.
 
@@ -694,10 +658,6 @@ This would create a `subcount` object in each hexbin, which would contain the re
 `  -p, --groupBy <groupBy>       ` name of the feature property by which hexbin counts will be further grouped. subcounts for unique values will be available as objects in the feature
 
 `  -a, --aggregate <aggregate>   ` name of the feature property used for aggregating sum value of all the features inside hexbin. A sum object will be created, with relative and max sum, and average.
-
-`  -r, --readToken <readToken>   ` token of another user's source space, from which points will be read
-
-`  -w, --writeToken <writeToken> ` token of another user's target space to which hexbins will be written
 
 `  -t, --tags <tags>             ` only make hexbins for features in the source space that match the specific tag(s), comma-separate multiple values
 

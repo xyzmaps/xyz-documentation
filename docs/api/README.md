@@ -1,31 +1,12 @@
-> # Note
->
-> Data Hub is currently "[In Maintenance](https://developer.here.com/documentation/product-lifecycle-policy/customer_notice/index.html)". <font color="red">**Designated end of life of Data Hub is end of Q1 2023 (March 31th).**</font>
->
-> Interactive map layers (IML) has been identified as the successor to Data Hub. For new users considering Data Hub, HERE recommends that you start with IML on the [HERE platform](https://platform.here.com).
-Data Hub is a real-time cloud-based location hub for discovering, storing, retrieving, manipulating and publishing private or public mapping data.
 
 # Overview
 
-Data Hub is a real-time cloud-based location hub for discovering, storing, retrieving, manipulating and publishing private or public mapping data.
+XYZ Maps is a real-time self-hosted location hub for managing, storing, retrieving, manipulating and publishing private or public mapping data.
 
 It uses the concepts of **Spaces** to store your data. A Space is your own geospatial
 data repository, which you can quickly create when needed to store data.
 
 To interact with the HERE Data Hub API directly from your application you need to use HERE's public REST APIs. These are simple to use from any application environment - you only need to know how to make RESTful requests.
-
-> #### Note
-> 
-> Data Hub is currently "[In Maintenance](https://developer.here.com/documentation/product-lifecycle-policy/customer_notice/index.html)". Interactive map layers (IML) has been identified as the successor to Data Hub. For new users considering Data Hub, HERE recommends that you start with IML on the [HERE platform](https://platform.here.com).
->
-> For more information on IML, see the [Data API](https://developer.here.com/documentation/data-api/data_dev_guide/rest/layers.html).
-
-## Authentication
-
-For everything you want to do via the API, you need to use a token as described in the
-[Generate Token Section](getting-token.md).
-
-[![API](images/api-auth.png)](images/api-auth.png)
 
 ## Data
 
@@ -56,14 +37,11 @@ Another core concept when you are working Space is to [iterate](https://xyz.api.
 If you access with *a lot* of data, you will retrieve it in parts. With the `limit` parameter, you tell the API how much data you want to see at once. The `handle` is something the
 API gives you together with the data, which you need to provide back when you want to continue to get the next chunk of data.
 
-## ReDoc API documentation
+### Swagger API documentation
 
-[`https://xyz.api.here.com/hub/static/redoc/`](https://xyz.api.here.com/hub/static/redoc/)
+[`http://localhost:8080/hub/static/swagger/`](http://localhost:8080/hub/static/swagger/)
 
-## Open API documentation
+### ReDoc API documentation
 
-[`https://xyz.api.here.com/hub/static/swagger/`](https://xyz.api.here.com/hub/static/swagger/)
+[`http://localhost:8080/hub/static/redoc/`](http://localhost:8080/hub/static/redoc/)
 
-## Data Privacy
-
-HERE is committed to respecting your privacy and to complying with applicable data protection and privacy laws. For more information, see the [HERE Privacy Policy](https://legal.here.com/en-gb/privacy).

@@ -39,38 +39,3 @@ This package can be installed with `pip` or `conda` from various sources:
 
 The detailed documentation is available [here](https://xyz-spaces-python.readthedocs.io/en/latest/).
 
-## HERE Maps API for Javascript
-
-Your Data Hub Spaces can be accessed using [HERE MapsJS](https://developer.here.com/documentation/maps/3.1.37.0/dev_guide/topics/xyz-spaces.html) as of version 3.1.
-
-HERE Maps API for JavaScript provides a simple way to add the data presented as an Data Hub Space to the existing application. Also, HERE Maps API for JavaScript allows building a new application that uses HERE services, such as Routing, Geocoding, Fleet Telematics Advanced Data Sets and others, alongside with Data Hub.
-
-The snippet below:
-
-- Gets an instance of the Data Hub service and passes an Data Hub access token to it.
-- Creates one Data Hub provider for each space and adds them as an H.map.layer.TileLayer.
-
-```javascript
-// provided that the platform and the map are instantiated.
-const service = platform.getXYZService({
-  token: <YOUR_DATA_HUB_ACCESS_TOKEN>,
-});
-
-// create a provider for the public buildings data
-const buildingsSpaceProvider = new H.service.xyz.Provider(service, <DATA_HUB_SPACE_ID>, {
-  'min': 14
-});
-const buildingsSpaceLayer = new H.map.layer.TileLayer(buildingsSpaceProvider);
-// add a layer to the map
-map.addLayer(buildingsSpaceLayer);
-
-// create a provider for the custom user defined data
-const customSpaceProvider = new H.service.xyz.Provider(service, <DATA_HUB_SPACE_ID>);
-const customSpaceLayer = new H.map.layer.TileLayer(customSpaceProvider);
-// add a layer to the map
-map.addLayer(customSpaceLayer);
-```
-
-### Documentation
-
-The API reference provides details on the [Provider](https://developer.here.com/documentation/maps/3.1.37.0/api_reference/H.service.xyz.Provider.html) and [Service](https://developer.here.com/documentation/maps/3.1.37.0/api_reference/H.service.xyz.Service.html) implementations.

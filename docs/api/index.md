@@ -1,21 +1,10 @@
-> ## Note
->
-> Data Hub is currently "[In Maintenance](https://developer.here.com/documentation/product-lifecycle-policy/customer_notice/index.html)". <font color="red">**Designated end of life of Data Hub is end of Q1 2023 (March 31th).**</font>
-> 
-> Interactive map layers (IML) has been identified as the successor to Data Hub. For new users considering Data Hub, HERE recommends that you start with IML on the [HERE platform](https://platform.here.com).
-Data Hub is a real-time cloud-based location hub for discovering, storing, retrieving, manipulating and publishing private or public mapping data.
+Data Hub is a real-time self-hosted location hub for discovering, storing, retrieving, manipulating and publishing private or public mapping data.
 
 It uses the concepts of **Spaces** to store your data. A Space is your own geospatial
 data repository, which you can quickly create when needed to store data.
 
-To interact with the HERE Data Hub API directly from your application you need to use HERE's public REST APIs. These are simple to use from any application environment - you only need to know how to make RESTful requests.
+To interact with the XYZ Maps API directly from your application you need to use XYZ's local REST APIs. These are simple to use from any application environment - you only need to know how to make RESTful requests.
 
-## Authentication
-
-For everything you want to do via the API, you need to use a token as described in the
-[Generate Token Section](getting-token.md).
-
-[![API](images/api-auth.png)](images/api-auth.png)
 
 ## Data
 

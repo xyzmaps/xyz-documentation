@@ -1,34 +1,30 @@
-# HERE Data Hub Links
+# XYZ Maps Links
 
-Here is a list of links for working with HERE Data Hub
+Here is a list of links for working with XYZ Maps
 
 ## API and Service
 
-### Base URL for API
+### Base URL for your API
 
-[`https://xyz.api.here.com/hub/`](https://xyz.api.here.com/hub/)
+[`http://localhost:8080/hub/`](http://localhost:8080/hub/)
 
 ### Swagger API documentation
 
-[`https://xyz.api.here.com/hub/static/swagger/`](https://xyz.api.here.com/hub/static/swagger/)
+[`http://localhost:8080/hub/static/swagger/`](http://localhost:8080/hub/static/swagger/)
 
 ### ReDoc API documentation
 
-[`https://xyz.api.here.com/hub/static/redoc/`](https://xyz.api.here.com/hub/static/redoc/)
+[`http://localhost:8080/hub/static/redoc/`](http://localhost:8080/hub/static/redoc/)
 
-## Data Hub Tools
+## XYZ Tools
 
-### Token Generation UI
+### XYZ Maps Playground
 
-[`https://xyz.api.here.com/token-ui/`](https://xyz.api.here.com/token-ui/)
+[`https://xyzmaps.github.io/xyz-maps/playground`](https://heremaps.github.io/xyz-maps/playground)
 
-### Maps UI Playground
+### XYZ Maps JSDoc Documentation
 
-[`https://xyz.api.here.com/maps/`](https://xyz.api.here.com/maps/)
-
-### Maps UI JSDoc Documentation
-
-[`https://xyz.api.here.com/maps/latest/documentation/index.html`](https://xyz.api.here.com/maps/latest/documentation/index.html)
+[`https://heremaps.github.io/xyz-maps/docs/`](https://heremaps.github.io/xyz-maps/docs/)
 
 ### JavaScript Maps UI Components
 
@@ -49,16 +45,13 @@ Links to copy and paste into your HTML header:
 <script src="https://xyz.api.here.com/maps/latest/xyz-maps-editor.min.js" type="text/javascript" charset="UTF-8" ></script>
 ```
 
-## Open Source Tools
+## XYZ Maps Tools
 
-### GeoJSON Tool
+### XYZ GeoJSON Tool
 
-[`http://geojson.tools/`](http://geojson.tools/)
+[`https://xyzmaps.github.io/geojson-tool/`](https://xyzmaps.github.io/geojson-tool/)
 
-### Tangram Play
+### XYZ Space Invaders
 
-[`http://geojson.tools/tangram/`](http://geojson.tools/tangram/)
+[`https://xyzmaps.github.io/xyz-space-invader`](https://xyzmaps.github.io/xyz-space-invader)
 
-## HERE Developer Portal Documentation
-
-[`https://developer.here.com/documentation/xyz`](https://developer.here.com/documentation/xyz)

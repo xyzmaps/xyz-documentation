@@ -1,17 +1,17 @@
 # Project information
-site_name: HERE Data Hub - Open Documentation
-site_description: Make great maps easier
-site_author: The HERE Data Hub Team
-site_url: https://www.here.xyz/
+site_name: XYZ Maps - Open Documentation
+site_description: Free Open Source Mapping Platform
+site_author: XYZ Maps and contributors
+site_url: https://xyzmaps.github.io/
 site_dir: ../site
 
 # Repository
-repo_name: heremaps/xyz-documentation
-repo_url: https://github.com/heremaps/xyz-documentation
+repo_name: xyzmaps/xyz-documentation
+repo_url: https://github.com/xyzmaps/xyz-documentation
 #edit_uri:
 
 # Copyright
-copyright: 'Copyright &copy; 2018-2021 HERE Europe B.V.'
+copyright: 'Copyright &copy; 2022-2023 XYZ Maps and contributors, 2018-2021 HERE Europe B.V.'
 
 # Configuration
 theme:
@@ -33,9 +33,9 @@ theme:
   palette:
     primary: here
     accent: here
-  font:
-    text: Fira Sans
-    code: Fira Mono
+  # font:
+  #   text: Fira Sans
+  #   code: Fira Mono
   favicon: assets/images/favicon.ico
   logo: assets/images/logo.svg
 
@@ -43,11 +43,11 @@ theme:
 extra:
   social:
     - type: globe
-      link: http://www.here.com/
+      link: http://xyzmaps.github.io/
     - type: github-alt
-      link: https://github.com/heremaps
-    - type: slack
-      link: https://here-xyz.slack.com
+      link: https://github.com/xyzmaps
+    # - type: slack
+    #   link: https://here-xyz.slack.com
 
 # Page tree
 nav:
@@ -56,10 +56,7 @@ nav:
   - Data Hub APIs:
       - Data Hub API:
           - Overview: api/index.md
-          - Migrating to IML: api/migrating-to-iml.md
-          - Manage Tokens: api/getting-token.md
           - Quick Start:
-              - Acquiring Credentials: api/quickstart/acquiringcredentials.md
               - Read Spaces: api/quickstart/readspaces.md
               - Create a Space: api/quickstart/createspace.md
               - Write to a Space: api/quickstart/writetospace.md
@@ -92,7 +89,7 @@ nav:
               - Work with Activity Log: api/devguide/activitylogguide.md
               - Common Errors: api/devguide/commonerrors.md
           - API Reference: api/apireference.md
-      - Data Hub Maps JS:
+      - XYZ Maps JS:
           - Overview: ui/index.md
           - Get started: ui/gettingstarted.md
           - Display your space: ui/yourxyzspace.md
@@ -100,7 +97,7 @@ nav:
           - Add interactivity: ui/tapfeature.md
       - Useful Links: api/links.md
   - Tools:
-      - HERE CLI:
+      - XYZ Maps CLI:
           - Overview: cli/index.md
           - Basic features: cli/basic-features.md
           - Add-on features: cli/add-on.md
@@ -109,7 +106,7 @@ nav:
               - Hexbins: cli/tutorials/cli_hexbins.md
               - Group by in CSV : cli/tutorials/group_by.md
           - Command reference: cli/command-reference.md
-      - Data Hub Space Invader: cli/space-invader/index.md
+      - XYZ Space Invader: cli/space-invader/index.md
       - XYZ Spaces for Python: cli/tools#xyz-spaces-for-python
       - Maps API for Javascript: cli/tools#here-maps-api-for-javascript
       - GeoJSON Viewer:
@@ -120,10 +117,7 @@ nav:
           - Buildings: cli/topics/microsoft-buildings.md
   - Data Hub Add-on:
         - Data Hub Add-on: cli/datahub_add-on.md
-  - Releases:
-      - Release notes: release-notes.md
-  - Tutorials:
-      - https://developer.here.com/tutorials?category=HERE%2BStudio%2Band%2BData%2BHub
+
 
 # Extensions
 markdown_extensions:
@@ -153,4 +147,3 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-# google_analytics: ['UA-119781446-1', 'techpreview.xyz']
