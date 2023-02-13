@@ -2,7 +2,7 @@
 site_name: XYZ Maps - Open Documentation
 site_description: Free Open Source Mapping Platform
 site_author: XYZ Maps and contributors
-site_url: https://xyzmaps.github.io/
+site_url: https://xyzmaps.github.io/xyz-documentation
 site_dir: ../site
 
 # Repository
