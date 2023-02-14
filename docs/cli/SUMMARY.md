@@ -1,7 +1,7 @@
 
 # SUMMARY
 
-- [HERE Data Hub CLI](README.md)
+- [XYZ Maps CLI](README.md)
   - [Overview](index.md)
   - [Basic features](basic-features.md)
   - [Add-on features](add-on.md)
@@ -17,4 +17,4 @@
   - [GeoJSON Basics](topics/geojsonbasics.md)
   - [Advanced Features](viewer-tool/advanced.md)
 - [Open Datasets](topics/microsoft-buildings.md)
-- [Data Hub Add-on](datahub_add-on.md)
+- [XYZ Maps Add-on](datahub_add-on.md)

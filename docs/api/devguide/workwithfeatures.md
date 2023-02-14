@@ -6,7 +6,7 @@ The following request queries a single feature using the ID of the feature.
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeature)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeature)*
 
 ```HTTP
 GET /spaces/{spaceId}/features/{featureId}
@@ -51,7 +51,7 @@ For querying multiple features in a space use the following request:
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeatures)*
 
 ```HTTP
 GET /spaces/[spaceId}/features?id={featureId1},{featureId2},{featureId3}
@@ -101,7 +101,7 @@ Here is an example of getting the number of features in a space, the size and a 
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getStatistics)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getStatistics)*
 
 ```HTTP
 GET /spaces/{spaceId}/statistics
@@ -174,7 +174,7 @@ To keep already existing features, use [this request](#modifying-space-features)
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Features/putFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Features/putFeatures)*
 
 ```HTTP
 PUT /spaces/{spaceId}/features
@@ -266,7 +266,7 @@ This is an example for modifying existing features using a POST request.
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Features/postFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Features/postFeatures)*
 
 ```HTTP
 POST /spaces/{spaceId}/features
@@ -362,7 +362,7 @@ This request contains only the feature properties you want to add, update or del
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Features/patchFeature)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Features/patchFeature)*
 
 ```HTTP
 PATCH /spaces/{spaceId}/features?id={featureId1},{featureId2},{featureId3}
@@ -460,7 +460,7 @@ There are two ways of searching a space. /search is one, the other is [/iterate]
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/searchForFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/searchForFeatures)*
 
 ```HTTP
 GET /spaces/{spaceId}/search
@@ -514,7 +514,7 @@ This is the second way to search a space (the other is [/search](#searching-a-sp
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/iterateFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/iterateFeatures)*
 
 ```HTTP
 GET /spaces/{spaceId}/iterate
@@ -568,7 +568,7 @@ You can remove specific features by sending this request with their feature IDs
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Features/deleteFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Features/deleteFeatures)*
 
 ```HTTP
 DELETE /spaces/{spaceId}/features?id={id1},{id2}

@@ -1,7 +1,7 @@
 # XYZ Maps CLI
 
 In this section we give you a quick overview of the most commonly used commands to interact
-with Data Hub Spaces from the XYZ Maps CLI. 
+with XYZ Maps Spaces from the XYZ Maps CLI. 
 
 ## Supported Commands
 
@@ -21,9 +21,9 @@ by using the `--help` switch.
 xyzmaps --help
 ```
 
-### <a name="interact-with-data-hub-spaces">[Interact with Data Hub Spaces](command-reference.md#xyz)
+### <a name="interact-with-data-hub-spaces">[Interact with XYZ Maps Spaces](command-reference.md#xyz)
 
-The `space` command is used to interact with Data Hub Spaces.
+The `space` command is used to interact with XYZ Maps Spaces.
 
 You can find the supported subcommands with the `--help` switch:
 
@@ -77,11 +77,11 @@ Applies a schema validation json file to the space to be applied to future uploa
 
 #### [Upload/Update data to a Space](command-reference.md#upload)
 
-The CLI makes it easy to upload geospatial files to a Data Hub Space, and there are many options to enhance, optimize and speed up the upload process.
+The CLI makes it easy to upload geospatial files to a XYZ Maps Space, and there are many options to enhance, optimize and speed up the upload process.
 
 ##### Upload GeoJSON
 
-Upload a GeoJSON file to a new space. Data Hub will automatically generate a space ID and display it for you.
+Upload a GeoJSON file to a new space. XYZ Maps will automatically generate a space ID and display it for you.
 
 ```console
 xyzmaps space upload -f /Users/xyz/data.geojson
@@ -103,9 +103,9 @@ xyzmaps space upload SPACE_ID -f /Users/xyz/data.geojson
 >
 > XYZ Maps requires that every feature in a space has a unique ID. This helps you access individual features in a space using the API.
 >
-> If a GeoJSON feature does not have an ID (a common occurrence), Data Hub's default upload behavior is to create one based on a hash of the feature's property &mdash; note that if you have records with duplicate IDs in a dataset at the same location with the same properties, only one will be uploaded. You can define a new feature ID using more than one property using `-i`.)
+> If a GeoJSON feature does not have an ID (a common occurrence), XYZ Maps's default upload behavior is to create one based on a hash of the feature's property &mdash; note that if you have records with duplicate IDs in a dataset at the same location with the same properties, only one will be uploaded. You can define a new feature ID using more than one property using `-i`.)
 >
-> By default, the CLI will respect any IDs already in a feature. Note that if a new feature has the same ID as an existing feature, Data Hub will consider it an update and overwrite the existing feature.  Note that some public datasets have a set of feature IDs that are simply incremental integers, which can lead to feature replacement that you probably didn't want when you are uploading multiple files to the same space. In this case, you may want to use `-o` to override the existing ID and create a unique feature ID based on a hash of the feature's properties. You can also select multiple properties with `-i` to generate something unique and human-readable.
+> By default, the CLI will respect any IDs already in a feature. Note that if a new feature has the same ID as an existing feature, XYZ Maps will consider it an update and overwrite the existing feature.  Note that some public datasets have a set of feature IDs that are simply incremental integers, which can lead to feature replacement that you probably didn't want when you are uploading multiple files to the same space. In this case, you may want to use `-o` to override the existing ID and create a unique feature ID based on a hash of the feature's properties. You can also select multiple properties with `-i` to generate something unique and human-readable.
 
 ##### Upload a CSV file
 
@@ -187,7 +187,7 @@ Note that if you need to restart your upload, existing features will not be dupl
 
 ##### Upload and stream large CSV and GeoJSON files
 
-To upload very large CSV and GeoJSON files to your Data Hub space, you will need to use `-s` -- this will stream the file and avoid Node.js memory errors. It will also be considerably faster than the standard upload method. (Note that you cannot currently stream a shapefile.)
+To upload very large CSV and GeoJSON files to your XYZ Maps space, you will need to use `-s` -- this will stream the file and avoid Node.js memory errors. It will also be considerably faster than the standard upload method. (Note that you cannot currently stream a shapefile.)
 
 ```console
 xyzmaps space upload YOUR_SPACE_ID -f /Users/xyz/big_data.csv -s
@@ -201,10 +201,10 @@ xyzmaps space upload YOUR_SPACE_ID -f /Users/xyz/big_data.csv -s
 > #### Note
 >
 > XYZ Maps is a database. Databases trade off storage space for speed, and your data will always
-> take up more storage space in Data Hub than it does in a static file. When a file is uploaded into
-> a Data Hub Space, features, their properties, and the geometries are broken out into multiple tables,
+> take up more storage space in XYZ Maps than it does in a static file. When a file is uploaded into
+> a XYZ Maps Space, features, their properties, and the geometries are broken out into multiple tables,
 > indexed and tagged. All of this lets you query your geospatial data on demand, and access it
-> dynamically as vector tiles. You can check the size of your Data Hub Spaces in your account
+> dynamically as vector tiles. You can check the size of your XYZ Maps Spaces in your account
 > dashboard or the CLI.
 
 ##### Upload a shapefile
@@ -242,15 +242,15 @@ There are many, many more tips in the [Working with Shapefiles](tutorials/shapef
 xyzmaps space upload -f data.csv -i unique_id
 ```
 
-You can upload CSV to a Data Hub space and select a column to be the GeoJSON feature ID.
+You can upload CSV to a XYZ Maps space and select a column to be the GeoJSON feature ID.
 
-This feature should be used if your data has well-known and truly unique identifiers that you want to preserve. The Data Hub API can [query individual features by feature ID](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeatures), so this can be a valuable method of accessing and updating features.
+This feature should be used if your data has well-known and truly unique identifiers that you want to preserve. The XYZ Maps API can [query individual features by feature ID](https://localhost:8080/hub/static/swagger/#/Read%20Features/getFeatures), so this can be a valuable method of accessing and updating features.
 
 By default, the CLI will generate a unique feature ID during CSV upload based on a hash of the properties and geometry.
 
 > #### Note
 >
-> Unique IDs are important for Data Hub Add-on features such as 
+> Unique IDs are important for XYZ Maps Add-on features such as 
 > [Virtual Spaces](datahub_add-on.md#virtual-spaces).
 
 > #### Warning
@@ -260,11 +260,11 @@ By default, the CLI will generate a unique feature ID during CSV upload based on
 
 ##### Upload and assign tags
 
-Tags are special properties that can be added to a feature that makes it easy to query them from the Data Hub API using the `&tags=` parameter.
+Tags are special properties that can be added to a feature that makes it easy to query them from the XYZ Maps API using the `&tags=` parameter.
 
 > #### Note
 >
-> Data Hub Tags should be used selectively, ideally using [Rule-Based Tags](add-on.md#rule-based-tags).
+> XYZ Maps Tags should be used selectively, ideally using [Rule-Based Tags](add-on.md#rule-based-tags).
 > Tags are not meant to be a replacement for [Property Search](#property-search) as you will be
 > duplicating existing data in a record.
 
@@ -306,7 +306,7 @@ treatment@green_paint, treatment@sharrows, treatment@hit_post
 
 ##### Upload data with a timestamp and date properties
 
-If you have a timestamp or date properties in your data, the CLI can help you create additional time and date specific properties and time-based tags. This will make it easier to use the Data Hub Property Search feature.
+If you have a timestamp or date properties in your data, the CLI can help you create additional time and date specific properties and time-based tags. This will make it easier to use the XYZ Maps Property Search feature.
 
 ```console
 xyzmaps space upload <SPACE_ID> -f <CSV|GEOJSON> --date <propertyname>
@@ -392,7 +392,7 @@ While uploading shapefiles, `--batch` will inspect one level of sub-directories 
 
 `-c, --chunk [chunk]` chunk size (adjusts the number of features uploaded at once)
 
-`-t, --tags [tags]`   tags for the Data Hub space (used to filter data from the API)
+`-t, --tags [tags]`   tags for the XYZ Maps space (used to filter data from the API)
 
 `--token <token>`    an external token to upload data to another user's space
 
@@ -448,7 +448,7 @@ While uploading shapefiles, `--batch` will inspect one level of sub-directories 
 
 > #### Note
 >
-> Some GeoJSON features may cross the international dateline. In older GeoJSON files, some coordinates may have longitudes greater than 180 or less than -180.  You cannot upload these features to Data Hub – these features should be split into MultiPolygons or MultiLineStrings. Also, some coordinates that are supposed to be 180/-180 can end up looking like `180.0000008576` thanks to floating-point precision errors in whatever process created them. This is also something you can't upload to Data Hub.
+> Some GeoJSON features may cross the international dateline. In older GeoJSON files, some coordinates may have longitudes greater than 180 or less than -180.  You cannot upload these features to XYZ Maps – these features should be split into MultiPolygons or MultiLineStrings. Also, some coordinates that are supposed to be 180/-180 can end up looking like `180.0000008576` thanks to floating-point precision errors in whatever process created them. This is also something you can't upload to XYZ Maps.
 
 #### [Join data to another space](command-reference.md#join)
 
@@ -477,7 +477,7 @@ xyzmaps space show spaceID -r > my.geojson
 ```
 
 If your space contains a few hundred to a few thousand features, you can open the space in geojson.tools, a data preview tool, using `show -w`.  
-Larger spaces can be previewed in [Space Invader](space-invader/index.md), a Tangram-based tool from Data Hub Labs, using `show -v`, and features like H3 hexbin and quadbin clustering can be used to visualize even larger spaces.
+Larger spaces can be previewed in [Space Invader](space-invader/index.md), a Tangram-based tool from XYZ Maps Labs, using `show -v`, and features like H3 hexbin and quadbin clustering can be used to visualize even larger spaces.
 
 > #### Note
 
@@ -485,15 +485,15 @@ Larger spaces can be previewed in [Space Invader](space-invader/index.md), a Tan
 
 ##### Filter by Tags
 
-You can filter tags from Data Hub using tags with `-t`:
+You can filter tags from XYZ Maps using tags with `-t`:
 
 `xyzmaps space show spaceID -t my_tag` (records with `my_tag` will be printed in the console)
 `xyzmaps space show spaceID -w -t my_tag` (records with `my_tag` will be opened in geojson.tools)
-`xyzmaps space show spaceID -v -t my_tag` (records with `my_tag` will be opened in Data Hub Space Invader)
+`xyzmaps space show spaceID -v -t my_tag` (records with `my_tag` will be opened in XYZ Maps Space Invader)
 
 ##### Property Search
 
-If a property has been indexed by Data Hub, you can filter them with `-s` or `--search`. The property name must be prefixed by `p.`:
+If a property has been indexed by XYZ Maps, you can filter them with `-s` or `--search`. The property name must be prefixed by `p.`:
 
 ```console
 xyzmaps space show spaceID -s "p.property_name>value"
@@ -510,11 +510,11 @@ xyzmaps space show spaceID -s "p.name=John,Tom+p.age<50+p.phone='9999999'+p.zipc
 
 > #### Note
 >
-> Property Search is available in spaces with fewer than 10,000 features by default. For spaces larger than 10,000 features, a limited number will be indexed. To access more, you'll need a Data Hub Add-on license, [learn more about Data Hub Add-on features here](datahub_add-on.md).
+> Property Search is available in spaces with fewer than 10,000 features by default. For spaces larger than 10,000 features, a limited number will be indexed. To access more, you'll need a XYZ Maps Add-on license, [learn more about XYZ Maps Add-on features here](datahub_add-on.md).
 
 ##### Property Filters
 
-You can use `show -p` or `--prop` to filter the properties that are returned by the Data Hub API. This is useful when your features have a large number of properties, and you only need to return some of them along with the geometry.
+You can use `show -p` or `--prop` to filter the properties that are returned by the XYZ Maps API. This is useful when your features have a large number of properties, and you only need to return some of them along with the geometry.
 
 ```console
 xyzmaps space show -p p.property1,p.property2 -w
@@ -522,9 +522,9 @@ xyzmaps space show -p p.property1,p.property2 -w
 
 ##### Spatial Search
 
-You can use `--spatial` to search for features in a Data Hub space that fall within the radius from a point, or within a polygon, or along a line.
+You can use `--spatial` to search for features in a XYZ Maps space that fall within the radius from a point, or within a polygon, or along a line.
 
-You can specify a point and a radius, or a feature in another Data Hub space, or a GeoJSON file containing a feature.
+You can specify a point and a radius, or a feature in another XYZ Maps space, or a GeoJSON file containing a feature.
 
 - `--center`: comma separated `lon,lat` values `(x,y)` that specify the center point for the search. While this might work unquoted in most shells, some shells are going to interpret the `-` as an argument, so it's safest to use double quotes.
 - `--radius`: the radius of the search, in meters, from the `--center` point, or a buffer around a geometry specified with `--feature` or `--geometry`
@@ -543,9 +543,9 @@ You can specify a point and a radius, or a feature in another Data Hub space, or
 
 `-t, --tags <tags>` Tags to filter on
 
-`-r, --raw` show raw Data Hub space content (this iterates through every feature, so you can direct this to a file using `>`
+`-r, --raw` show raw XYZ Maps space content (this iterates through every feature, so you can direct this to a file using `>`
 
-`--all` iterate over entire Data Hub space to get entire data of space, output will be shown on the console in geojson format (and can be directed to a file using `>`)
+`--all` iterate over entire XYZ Maps space to get entire data of space, output will be shown on the console in geojson format (and can be directed to a file using `>`)
 
 `--geojsonl` to print output of --all in geojsonl format
 
@@ -555,9 +555,9 @@ You can specify a point and a radius, or a feature in another Data Hub space, or
 
 `-p, --prop <prop>` selection of properties, use p.\<FEATUREPROP\> or f.<id/updatedAt/tags/createdAt>
 
-`-w, --web` display Data Hub space on [http://geojson.tools](http://geojson.tools)
+`-w, --web` display XYZ Maps space on [http://geojson.tools](http://geojson.tools)
 
-`-v, --vector` inspect and analyze using [Data Hub Space Invader](space-invader/index.md) and tangram.js
+`-v, --vector` inspect and analyze using [XYZ Maps Space Invader](space-invader/index.md) and tangram.js
 
 `-x, --permanent` generate a permanent token for the space when using `-v` or `-w` instead of a temporary token that expires in 48 hours)
 
@@ -604,9 +604,9 @@ Clear data from your space. You clear the entire space, or clear by tag or featu
 
 ##### Options
 
-`-t, --tags <tags>` tags for the Data Hub space
+`-t, --tags <tags>` tags for the XYZ Maps space
 
-`-i, --ids <ids>` ids for the Data Hub space
+`-i, --ids <ids>` ids for the XYZ Maps space
 
 `--token <token>` an external token to clear another user's space data
 
@@ -620,7 +620,7 @@ Clear data from your space. You clear the entire space, or clear by tag or featu
 xyzmaps space token
 ```
 
-Lists all the Data Hub tokens you have available:
+Lists all the XYZ Maps tokens you have available:
 
 ```console
 id             | type    | lat      | description
@@ -631,7 +631,7 @@ YOUR_TOKEN_NR_2 PERMANENT 1534516620 xyz-hub=readFeatures
 
 ##### Options
 
-`--console` opens the web console for Data Hub <https://xyz.api.here.com/console>
+`--console` opens the web console for XYZ Maps <https://localhost:8080/console>
 
 `-h, --help` display help for command
 
@@ -675,7 +675,7 @@ xyzmaps space config -t "A meaningful title for a space" -d "additional details 
 
 ##### Share a space
 
-You can share a space with other users using the `--shared` option. If they have a Data Hub account, they will be able to read from that space using their own tokens (and any data transfer will be charged to their Data Hub account).
+You can share a space with other users using the `--shared` option. If they have a XYZ Maps account, they will be able to read from that space using their own tokens (and any data transfer will be charged to their XYZ Maps account).
 
 ```console
 xyzmaps space config spaceID --shared true
@@ -687,9 +687,9 @@ You can disable sharing by passing a `false` parameter:
 xyzmaps space config spaceID --shared false
 ```
 
-Note that any Data Hub user will be able to read a space you have shared, and will be able to view a list all shared spaces.
+Note that any XYZ Maps user will be able to read a space you have shared, and will be able to view a list all shared spaces.
 
-If you want to selectively share a space, you should generate a token for just that space using the [Data Hub Console](https://xyz.api.here.com/console).
+If you want to selectively share a space, you should generate a token for just that space using the [XYZ Maps Console](https://localhost:8080/console).
 
 ##### Basic Options
 
@@ -709,7 +709,7 @@ If you want to selectively share a space, you should generate a token for just t
 
 `-r, --raw` show raw json output
 
-`--console` opens web console for Data Hub
+`--console` opens web console for XYZ Maps
 
 `-h, --help` display help for command
 
@@ -717,11 +717,11 @@ If you want to selectively share a space, you should generate a token for just t
 
 > #### Note
 >
-> To use these features, your account needs access to the Data Hub Add-on Services. Learn more about [Data Hub Add-on](datahub_add-on.md) features here.
+> To use these features, your account needs access to the XYZ Maps Add-on Services. Learn more about [XYZ Maps Add-on](datahub_add-on.md) features here.
 
 `-s,--schema [schemadef]` view or set schema definition (local filepath / http link) for your space, applicable on future data, use with add/delete/update
 
-`--searchable` view or configure searchable properties of a Data Hub space, use with add/delete/update
+`--searchable` view or configure searchable properties of a XYZ Maps space, use with add/delete/update
 
 `--tagrules` add, remove, view the conditional rules to tag your features automatically, use with add/delete/update -- at present all tag rules will be
                                applied synchronously before features are stored ( mode : sync )
@@ -742,4 +742,4 @@ The `here transform` command converts CSVs, shapefiles, XLS/XLSX, and GPX files 
 
 ### Geocode locations
 
-The `here geocode` command takes an address string and uses the HERE Geocoder to return a GeoJSON feature containing the coordinates. This returns raw GeoJSON and does not save it to a space.
+The `here geocode` command takes an address string and uses the XYZ Geocoder to return a GeoJSON feature containing the coordinates. This returns raw GeoJSON and does not save it to a space.

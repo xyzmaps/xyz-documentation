@@ -1,14 +1,14 @@
 # Shapefiles
 
-## Importing shapefiles into Data Hub
+## Importing shapefiles into XYZ Maps
 
 [Shapefiles](https://en.wikipedia.org/wiki/Shapefile) are a proprietary but common geospatial file format developed by ESRI. It is frequently used by governments to store geospatial data.
 
-As of version 1.1 of the XYZ Maps CLI, most shapefiles can be easily uploaded into a Data Hub Space.
+As of version 1.1 of the XYZ Maps CLI, most shapefiles can be easily uploaded into a XYZ Maps Space.
 
     xyzmaps space upload -f my_shapefile.shp
 
-The CLI inspects the CRS and projection data in the `.prj` file normally found in the unzipped shapefile directory and will attempt to convert it to WGS84. If the CLI returns an error, the shapefile will require extra steps before you can bring it into Data Hub.  
+The CLI inspects the CRS and projection data in the `.prj` file normally found in the unzipped shapefile directory and will attempt to convert it to WGS84. If the CLI returns an error, the shapefile will require extra steps before you can bring it into XYZ Maps.  
 
 In this tutorial, we'll cover what you need to do to successfully import shapefiles, along with special steps using other open source tools for those trickier ones.
 
@@ -39,11 +39,11 @@ As of version 1.5, multiple shapefiles can be uploaded to a space simultaneously
 
     xyzmaps space upload -f my_directory_containing_shapefile --batch shp
 
-Note that you can use `-a` to select attributes of features to convert into tags, which will let you filter features server-side when you access the Data Hub API.
+Note that you can use `-a` to select attributes of features to convert into tags, which will let you filter features server-side when you access the XYZ Maps API.
 
 ## Advanced shapefile upload
 
-Shapefiles are an infinitely variable format, and there will be cases where you may need to manipulate or modify the data in order to import it into your Data Hub space. You can do this with other open-source geospatial tools, specifically `mapshaper` and QGIS.
+Shapefiles are an infinitely variable format, and there will be cases where you may need to manipulate or modify the data in order to import it into your XYZ Maps space. You can do this with other open-source geospatial tools, specifically `mapshaper` and QGIS.
 
 ### mapshaper
 
@@ -56,7 +56,7 @@ You can install it using `npm`:
 
     npm install -g mapshaper
 
-Note that `mapshaper` can modify shapefiles directly, or convert shapefiles into GeoJSON. Converting to GeoJSON will give you more options and faster uploads when bringing the data into Data Hub. The [mapshaper documentation](https://github.com/mbloch/mapshaper/wiki/Command-Reference) provides a wide variety of options, but a simple conversion command is:
+Note that `mapshaper` can modify shapefiles directly, or convert shapefiles into GeoJSON. Converting to GeoJSON will give you more options and faster uploads when bringing the data into XYZ Maps. The [mapshaper documentation](https://github.com/mbloch/mapshaper/wiki/Command-Reference) provides a wide variety of options, but a simple conversion command is:
 
     mapshaper my_geodata.shp -o my_geodata.geojson
     xyzmaps space upload -f my_geodata.geojson -a
@@ -75,7 +75,7 @@ You can also stream it, which will upload your data much more quickly:
 
     mapshaper my_geodata.shp -o format=geojson - | xyzmaps space upload spaceID -p property_name -t specific_tag -s
 
-(If you see unusual errors when piping from `mapshaper` to Data Hub, you may have more success keeping the conversion and uploading as separate steps.)
+(If you see unusual errors when piping from `mapshaper` to XYZ Maps, you may have more success keeping the conversion and uploading as separate steps.)
 
 Note that you can also run `mapshaper` as a web app, though there may be limits on file sizes.
 
@@ -83,13 +83,13 @@ Note that you can also run `mapshaper` as a web app, though there may be limits 
 
 ### XYZ Maps QGIS plugin
 
-QGIS is an open-source desktop GIS tool that lets you edit, visualize, manage, analyze and convert geospatial data. You can upload and download data from your Data Hub spaces using the [QGIS plugin](https://plugins.qgis.org/plugins/XYZHubConnector/). (The plugin is also available [on Github](https://github.com/heremaps/xyz-qgis-plugin).)
+QGIS is an open-source desktop GIS tool that lets you edit, visualize, manage, analyze and convert geospatial data. You can upload and download data from your XYZ Maps spaces using the [QGIS plugin](https://plugins.qgis.org/plugins/XYZHubConnector/). (The plugin is also available [on Github](https://github.com/heremaps/xyz-qgis-plugin).)
 
 You can install the QGIS plugin from within QGIS Plugin search tool if you have the "show experimental plugins" option checked in the plugin console settings.
 
 ![experimental](../images/qgis_plugin_experimental.png)
 
-You can easily open almost any shapefile in QGIS, at which point you can save it to your Data Hub spaces using the QGIS plugin, or export it as GeoJSON to the desktop to use the XYZ Maps CLI streaming upload options.
+You can easily open almost any shapefile in QGIS, at which point you can save it to your XYZ Maps spaces using the QGIS plugin, or export it as GeoJSON to the desktop to use the XYZ Maps CLI streaming upload options.
 
 ## Large individual features
 
@@ -123,7 +123,7 @@ As previously mentioned, for smaller shapefiles you can pipe output from `mapsha
 
 - open the shapefile in QGIS
 - choose Vector -> Geometry Tools -> Simplify
-- save the simplified data to a new Data Hub space using the plugin
+- save the simplified data to a new XYZ Maps space using the plugin
 
 The Simplify tool works in decimal degrees, and the default is 1 degree, which is probably not what you want. Useful values depend on the extent and zoom levels of your map, but `0.01`, `0.001`, `0.0001`, and `0.00001` are interesting values.
 
@@ -131,14 +131,14 @@ The Simplify tool works in decimal degrees, and the default is 1 degree, which i
 
 The XYZ Maps CLI will attempt to load the entire shapefile into memory before uploading it to the API. This will generally work for shapefiles up to 200MB, but you will start to see Node.js memory errors beyond that.
 
-While GeoJSON and CSVs can be streamed via the `upload -s` option, this option is not yet available for shapefiles. You will have the most success converting the shapefile to GeoJSON and then uploading to Data Hub.
+While GeoJSON and CSVs can be streamed via the `upload -s` option, this option is not yet available for shapefiles. You will have the most success converting the shapefile to GeoJSON and then uploading to XYZ Maps.
 
     mapshaper big_data.shp -o format=geojson big_data.geojson
     xyzmaps space upload spaceID -f big_data.geojson -s
 
 _Note that `-a` is not available when `-s` is used, but you can still specify properties to convert into tags using `-p`._
 
-You can also open the very large shapefile in QGIS and save directly to a Data Hub space using the Data Hub QGIS plugin, though this will be slower than using the CLI streaming feature as the QGIS plugin is not multi-threaded.
+You can also open the very large shapefile in QGIS and save directly to a XYZ Maps space using the XYZ Maps QGIS plugin, though this will be slower than using the CLI streaming feature as the QGIS plugin is not multi-threaded.
 
 ## Projections and CRS (Coordinate Reference Systems)
 

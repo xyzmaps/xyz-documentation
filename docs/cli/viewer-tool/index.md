@@ -8,7 +8,7 @@ that can quickly display data from various sources, highlight and inspect specif
 > Bookmark the GeoJSON Tool at:
 > [http://geojson.tools/](http://geojson.tools/)
 
-![Data Hub GeoJSON Tool](images/viewer.png)
+![XYZ Maps GeoJSON Tool](images/viewer.png)
 
 ## Getting around
 

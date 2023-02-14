@@ -1,4 +1,4 @@
-# Display your Data Hub Space content
+# Display your XYZ Maps Space content
 
 Adding a `SpaceProvider` as an additional `Layer` to the `display` enables you to quickly show
 your content on top of a map, without having to impement any additional functionality to fetch
@@ -7,7 +7,7 @@ in and out. This will be handled completely by the provider/layer combination an
 thing you need to configure is where the data is you want to show, and at which zoom levels
 you want it to be visible.
 
-1. Create and configure a `SpaceProvider` acting as a datasource to your Data Hub Space content
+1. Create and configure a `SpaceProvider` acting as a datasource to your XYZ Maps Space content
 
     ```javascript
     // Define provider for this layer

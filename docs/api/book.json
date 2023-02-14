@@ -1,11 +1,11 @@
 {
-  "title": "HERE Data Hub API",
-  "description": "A guide for HERE API",
+  "title": "XYZ Maps API",
+  "description": "A guide for XYZ API",
   "variables": {
-    "productName": "HERE Data Hub API",
+    "productName": "XYZ Maps API",
     "productVersion": "v1.0",
     "brandName": "HERE",
-    "documentName": "HERE Data Hub APIs",
+    "documentName": "XYZ Maps APIs",
     "documentStatus": "FINAL",
     "documentType": "Developer Guide",
     "confidentialnotice": "Confidential",

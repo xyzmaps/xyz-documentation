@@ -2,11 +2,11 @@
 
 ## Swagger API documentation
 
-[`https://xyz.api.here.com/hub/static/swagger/`](https://xyz.api.here.com/hub/static/swagger/)
+[`https://localhost:8080/hub/static/swagger/`](https://localhost:8080/hub/static/swagger/)
 
 ## ReDoc API documentation
 
-[`https://xyz.api.here.com/hub/static/redoc/`](https://xyz.api.here.com/hub/static/redoc/)
+[`https://localhost:8080/hub/static/redoc/`](https://localhost:8080/hub/static/redoc/)
 
 ## Other Useful Links
 

@@ -2,11 +2,11 @@
 
 Space Invader lets you inspect and analyze data, properties, and tags in a Space.
 
-It uses the tile query feature of the Tangram.js API to read, count and store all tags in the vector tiles loaded for map display, saving a second query to the Data Hub endpoint.
+It uses the tile query feature of the Tangram.js API to read, count and store all tags in the vector tiles loaded for map display, saving a second query to the XYZ Maps endpoint.
 
 It can also read and analyze properties of features in the viewport, and dynamically assign color ranges based on their ranges (for numbers), or counts (of discrete values). It can calculate basic statistics on values in a space and use those to help display appropriate color ramps.
 
-From the HERE Data Hub `/statistics` endpoint, it reads the number of features and the size of the space along with the bounding box of the data, and attempts to center the map there (unless the map is already centered within the bbox).
+From the XYZ Maps `/statistics` endpoint, it reads the number of features and the size of the space along with the bounding box of the data, and attempts to center the map there (unless the map is already centered within the bbox).
 
 Multiple color palettes can be applied to property ranges and ranks, and it is designed to be easy to add more palettes.
 
@@ -16,9 +16,9 @@ Space Invader can show hundreds of thousands to millions of features, though thi
 
 ## To get started
 
-- [install the HERE Data Hub CLI](../index.md)
+- [install the XYZ Maps CLI](../index.md)
 - upload a GeoJSON file, CSV or Shapefile to a Space, and [add tags based on properties](../basic-features.md)
-- open Space Invader from your account using `here xyz show SPACEID -v`
+- open Space Invader from your account using `xyzmaps space show SPACEID -v`
 
 Here are some examples to get you familiar with the interface and what Space Invader can do:
 

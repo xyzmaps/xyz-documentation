@@ -2,11 +2,11 @@
 
 > #### Note
 >
-> The endpoint for the API is <https://xyz.api.here.com/hub>.
+> The endpoint for the API is <https://localhost:8080/hub>.
 
 ## Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Spaces/postSpace)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Spaces/postSpace)*
 
 ```HTTP
 POST /spaces

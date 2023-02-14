@@ -2,7 +2,7 @@
 
 > #### Note
 >
-> The endpoint for the API is <https://xyz.api.here.com/hub>.
+> The endpoint for the API is <https://localhost:8080/hub>.
 
 Iterating over features is different from search in two ways:
 
@@ -13,7 +13,7 @@ Sometimes your search will have a lot of features as a result. But the limit you
 
 ## Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/iterateFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/iterateFeatures)*
 
 ```HTTP
 GET /spaces/{spaceId}/iterate?tags=&limit=2&handle=2

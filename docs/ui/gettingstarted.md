@@ -1,4 +1,4 @@
-# Getting Started with Data Hub Maps JS
+# Getting Started with XYZ Maps Maps JS
 
 Even when you're using a Playground sample as a starting point, it's good to know the mechanics of the
 data ends up on the map. And when you're starting from scratch, it's vital that you understand how to
@@ -12,11 +12,11 @@ make all of it happen yourself.
     <!DOCTYPE html>
       <html>
         <head>
-          <script src="https://xyz.api.here.com/maps/latest/xyz-maps-common.min.js" type="text/javascript" charset="UTF-8" ></script>
-          <script src="https://xyz.api.here.com/maps/latest/xyz-maps-core.min.js" type="text/javascript" charset="UTF-8" ></script>
-          <script src="https://xyz.api.here.com/maps/latest/xyz-maps-display.min.js" type="text/javascript" charset="UTF-8" ></script>
+          <script src="https://localhost:8080/maps/latest/xyz-maps-common.min.js" type="text/javascript" charset="UTF-8" ></script>
+          <script src="https://localhost:8080/maps/latest/xyz-maps-core.min.js" type="text/javascript" charset="UTF-8" ></script>
+          <script src="https://localhost:8080/maps/latest/xyz-maps-display.min.js" type="text/javascript" charset="UTF-8" ></script>
           <!-- include this if you want to use an MVT basemap -->
-          <script src="https://xyz.api.here.com/maps/latest/xyz-maps-plugins.min.js" type="text/javascript" charset="UTF-8" ></script>
+          <script src="https://localhost:8080/maps/latest/xyz-maps-plugins.min.js" type="text/javascript" charset="UTF-8" ></script>
         </head>
     ```
 
@@ -64,4 +64,4 @@ make all of it happen yourself.
       });
     ```
 
-1. Congratulations! Your first Data Hub map is ready
+1. Congratulations! Your first XYZ Maps map is ready

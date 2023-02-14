@@ -39,8 +39,8 @@ theme:
 nav:
   - Introduction: index.md
   - Getting Started: getting-started.md
-  - Data Hub APIs:
-      - Data Hub API:
+  - XYZ Maps APIs:
+      - XYZ Maps API:
           - Overview: api/index.md
           - Quick Start:
               - Read Spaces: api/quickstart/readspaces.md
@@ -74,6 +74,7 @@ nav:
                 - quadbin: api/devguide/quadbin.md
               - Work with Activity Log: api/devguide/activitylogguide.md
               - Common Errors: api/devguide/commonerrors.md
+          - Advanced concepts: cli/datahub_add-on.md
           - API Reference: api/apireference.md
       - XYZ Maps JS:
           - Overview: ui/index.md
@@ -100,8 +101,8 @@ nav:
           - Advanced Features: cli/viewer-tool/advanced.md
       - Open Datasets:
           - Buildings: cli/topics/microsoft-buildings.md
-  - Data Hub Add-on:
-        - Data Hub Add-on: cli/datahub_add-on.md
+
+       
 
 
 # Extensions

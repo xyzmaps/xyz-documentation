@@ -26,6 +26,6 @@ children will be removed before validation and only re-added afterwards.
 
 ### The schema reference "/myschemafile.json"("http://mydomain/myschemafile.json") cannot be resolved.
 
-HERE will not load resolve external schema definitions, even if the URL points
+XYZ will not load resolve external schema definitions, even if the URL points
 to a valid (sub-)schema. Use the *definitions* keyword to merge multiple
 schema files into one.

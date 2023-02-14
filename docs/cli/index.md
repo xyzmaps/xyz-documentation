@@ -1,6 +1,6 @@
 # XYZ Maps CLI
 
-We think developers deserve an easy to use, convenient and streamlined experience to work with Data Hub APIs. That’s why we’ve built the XYZ Maps CLI. XYZ Maps CLI is a Node.js command line interface which works not only with HERE Data Hub, but eventually, with any HERE API. Right now, it allows you to interact with XYZ Maps to create and manage your projects and easily upload and manage your datasets.
+We think developers deserve an easy to use, convenient and streamlined experience to work with XYZ Maps APIs. That’s why we’ve built the XYZ Maps CLI. XYZ Maps CLI is a Node.js command line interface which works not only with XYZ Maps, but eventually, with any XYZ API. Right now, it allows you to interact with XYZ Maps to create and manage your projects and easily upload and manage your datasets.
 
 > #### XYZ Maps CLI on GitHub
 >

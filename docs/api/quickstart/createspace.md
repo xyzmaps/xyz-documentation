@@ -4,7 +4,7 @@ See the following request and response for creating a new space:
 
 ## Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit_Spaces)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit_Spaces)*
 
 ```HTTP
 POST /spaces

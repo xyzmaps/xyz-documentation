@@ -19,12 +19,12 @@ scene:
 sources:
     mapzen: #xyz-osm
         type: MVT
-        url: https://xyz.api.here.com/tiles/osmbase/512/all/{z}/{x}/{y}.mvt
+        url: https://localhost:8080/tiles/osmbase/512/all/{z}/{x}/{y}.mvt
         url_params:
             access_token: global.access_token
         max_zoom: 16
     _xyzspace:
-        url: https://xyz.api.here.com/hub/spaces/MxDUEBlV/tile/web/{z}_{x}_{y}
+        url: https://localhost:8080/hub/spaces/MxDUEBlV/tile/web/{z}_{x}_{y}
         type: GeoJSON
         url_params:
             access_token: YOUR_TOKEN
@@ -33,7 +33,7 @@ sources:
             # limit: 50000 #
             clip: true
     _wof:
-        url: https://xyz.api.here.com/hub/spaces/LdmvFlzZ/tile/web/{z}_{x}_{y}
+        url: https://localhost:8080/hub/spaces/LdmvFlzZ/tile/web/{z}_{x}_{y}
         type: GeoJSON
         url_params:
             access_token: YOUR_TOKEN
@@ -42,7 +42,7 @@ sources:
             # limit: 50000 #
             clip: true
     _tornado_hexbins:
-        url: https://xyz.api.here.com/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
+        url: https://localhost:8080/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
         type: GeoJSON
         url_params:
             access_token: YOUR_TOKEN
@@ -51,7 +51,7 @@ sources:
             # limit: 50000 #
             clip: true
     _tornado_centroids:
-        url: https://xyz.api.here.com/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
+        url: https://localhost:8080/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
         type: GeoJSON
         url_params:
             access_token: YOUR_TOKEN
@@ -60,7 +60,7 @@ sources:
             # limit: 50000 #
             clip: true
     _z2:
-        url: https://xyz.api.here.com/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
+        url: https://localhost:8080/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
         type: GeoJSON
         # max_zoom: 13
         url_params: 
@@ -68,7 +68,7 @@ sources:
             tags: zoom2_centroid
             clip: true             
     _z3:
-        url: https://xyz.api.here.com/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
+        url: https://localhost:8080/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
         type: GeoJSON
         # max_zoom: 13
         url_params: 
@@ -77,7 +77,7 @@ sources:
             clip: true 
 
     _z4:
-        url: https://xyz.api.here.com/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
+        url: https://localhost:8080/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
         type: GeoJSON
         # max_zoom: 13
         url_params: 
@@ -86,7 +86,7 @@ sources:
             clip: true 
 
     _z5:
-        url: https://xyz.api.here.com/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
+        url: https://localhost:8080/hub/spaces/uFjNTqGV/tile/web/{z}_{x}_{y}
         type: GeoJSON
         # max_zoom: 13
         url_params: 

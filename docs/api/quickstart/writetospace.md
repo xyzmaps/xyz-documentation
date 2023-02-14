@@ -4,7 +4,7 @@ Having created a new space, you can write to it. The following example adds a co
 
 ## Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit_Features)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit_Features)*
 
 ```HTTP
 POST /spaces/{spaceId}/features
@@ -74,7 +74,7 @@ The response is a FeatureCollection, containing all created features.
 }
 ```
 
-When you upload a feature to Data Hub, HERE automatically adds the property, *@ns:com:here:xyz* to it. The following information is recorded in this property:
+When you upload a feature to XYZ Maps, XYZ automatically adds the property, *@ns:com:here:xyz* to it. The following information is recorded in this property:
 
 + *createdAt* - date and time the feature was created in milliseconds since 01.01.1970
 + *updatedAt* - date and time the feature was updated in milliseconds since 01.01.1970

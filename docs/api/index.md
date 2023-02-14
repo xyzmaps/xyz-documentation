@@ -1,4 +1,4 @@
-Data Hub is a real-time self-hosted location hub for discovering, storing, retrieving, manipulating and publishing private or public mapping data.
+XYZ Maps is a real-time self-hosted location hub for discovering, storing, retrieving, manipulating and publishing private or public mapping data.
 
 It uses the concepts of **Spaces** to store your data. A Space is your own geospatial
 data repository, which you can quickly create when needed to store data.
@@ -30,15 +30,15 @@ You can combine tags in a request by using `,` for `OR` and `+` for `AND`.
 
 ## Iterating
 
-Another core concept when you are working Space is to [iterate](https://xyz.api.here.com/hub/static/redoc/#operation/iterateFeatures) over the content to gather everything that you are interested in.
+Another core concept when you are working Space is to [iterate](https://localhost:8080/hub/static/redoc/#operation/iterateFeatures) over the content to gather everything that you are interested in.
 
 If you access with *a lot* of data, you will retrieve it in parts. With the `limit` parameter, you tell the API how much data you want to see at once. The `handle` is something the
 API gives you together with the data, which you need to provide back when you want to continue to get the next chunk of data.
 
 ## ReDoc API documentation
 
-[`https://xyz.api.here.com/hub/static/redoc/`](https://xyz.api.here.com/hub/static/redoc/)
+[`https://localhost:8080/hub/static/redoc/`](https://localhost:8080/hub/static/redoc/)
 
 ## Open API documentation
 
-[`https://xyz.api.here.com/hub/static/swagger/`](https://xyz.api.here.com/hub/static/swagger/)
+[`https://localhost:8080/hub/static/swagger/`](https://localhost:8080/hub/static/swagger/)

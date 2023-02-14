@@ -1,12 +1,12 @@
-# Data Hub Tools and Integrations
+# XYZ Maps Tools and Integrations
 
-You can acess the Data Hub API using a number of different SDKs and APIs.
+You can acess the XYZ Maps API using a number of different SDKs and APIs.
 
 ## XYZ Spaces for Python
 
 <https://github.com/heremaps/xyz-spaces-python>
 
-This open source Python package allows to interact with your Data Hub Spaces and features on a given Hub using a higher level programmatic interface that wraps the RESTful API. Using this package you can:
+This open source Python package allows to interact with your XYZ Maps Spaces and features on a given Hub using a higher level programmatic interface that wraps the RESTful API. Using this package you can:
 
 - Create, read, list, update, share, delete spaces (also: get Space info and stats).
 - Add, read, update, iterate, search, cluster (hex/quad bins), delete features.

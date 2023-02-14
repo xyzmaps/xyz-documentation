@@ -1,6 +1,6 @@
 # Use Clustering - hexbin
 
-This section describes how to retrieve features from Data Hub in a
+This section describes how to retrieve features from XYZ Maps in a
 hexbin clustered form. Two different clustering modes, "hexbin" and "quadbin", are available.
 
 * "quadbin" - gives the amount of features in tiles and subtiles. Purpuse is to give a fast overview on dataset locations on lower zoom levels. The quadbins corresponds to the webmercator tiling scheme. 
@@ -23,7 +23,7 @@ For more information on that topic see: <https://eng.uber.com/h3/>
 
 #### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesByTile)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeaturesByTile)*
 
 ```HTTP
 GET /spaces/{spaceId}/tile/{type}/{tileId}?clustering=hexbin&clustering.resolution={aNumber}&clustering.property={aPropertyName}

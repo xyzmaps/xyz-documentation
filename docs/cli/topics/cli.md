@@ -241,7 +241,7 @@ xyzmaps space upload -f data.csv -i unique_id
 
 Upload data to an XYZ space with a feature ID based on the feature's property `unique_id`. 
 
-This feature should be used if your data has well-known and truly unique identifiers that you want to preserve. The XYZ API can [query individual features by feature ID](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeatures), so this can be a valuable method of accessing and updating data.
+This feature should be used if your data has well-known and truly unique identifiers that you want to preserve. The XYZ API can [query individual features by feature ID](https://localhost:8080/hub/static/swagger/#/Read%20Features/getFeatures), so this can be a valuable method of accessing and updating data.
 
 By default, the CLI will generate a unique feature ID during upload based on a hash of the properties and geometry. 
 

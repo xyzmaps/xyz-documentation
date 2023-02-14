@@ -28,21 +28,21 @@ Here is a list of links for working with XYZ Maps
 
 ### JavaScript Maps UI Components
 
-Common [`https://xyz.api.here.com/maps/latest/xyz-maps-common.min.js`](https://xyz.api.here.com/maps/latest/xyz-maps-common.min.js)
+Common [`https://localhost:8080/maps/latest/xyz-maps-common.min.js`](https://localhost:8080/maps/latest/xyz-maps-common.min.js)
 
-Core [`https://xyz.api.here.com/maps/latest/xyz-maps-core.min.js`](https://xyz.api.here.com/maps/latest/xyz-maps-core.min.js)
+Core [`https://localhost:8080/maps/latest/xyz-maps-core.min.js`](https://localhost:8080/maps/latest/xyz-maps-core.min.js)
 
-Display [`https://xyz.api.here.com/maps/latest/xyz-maps-display.min.js`](https://xyz.api.here.com/maps/latest/xyz-maps-display.min.js)
+Display [`https://localhost:8080/maps/latest/xyz-maps-display.min.js`](https://localhost:8080/maps/latest/xyz-maps-display.min.js)
 
-Editor [`https://xyz.api.here.com/maps/latest/xyz-maps-editor.min.js`](https://xyz.api.here.com/maps/latest/xyz-maps-editor.min.js)
+Editor [`https://localhost:8080/maps/latest/xyz-maps-editor.min.js`](https://localhost:8080/maps/latest/xyz-maps-editor.min.js)
 
 Links to copy and paste into your HTML header:
 
 ```html
-<script src="https://xyz.api.here.com/maps/latest/xyz-maps-common.min.js" type="text/javascript" charset="UTF-8" ></script>
-<script src="https://xyz.api.here.com/maps/latest/xyz-maps-core.min.js" type="text/javascript" charset="UTF-8" ></script>
-<script src="https://xyz.api.here.com/maps/latest/xyz-maps-display.min.js" type="text/javascript" charset="UTF-8" ></script>
-<script src="https://xyz.api.here.com/maps/latest/xyz-maps-editor.min.js" type="text/javascript" charset="UTF-8" ></script>
+<script src="https://localhost:8080/maps/latest/xyz-maps-common.min.js" type="text/javascript" charset="UTF-8" ></script>
+<script src="https://localhost:8080/maps/latest/xyz-maps-core.min.js" type="text/javascript" charset="UTF-8" ></script>
+<script src="https://localhost:8080/maps/latest/xyz-maps-display.min.js" type="text/javascript" charset="UTF-8" ></script>
+<script src="https://localhost:8080/maps/latest/xyz-maps-editor.min.js" type="text/javascript" charset="UTF-8" ></script>
 ```
 
 ## XYZ Maps Tools

@@ -1,5 +1,5 @@
-The easiest way to get data from an HERE Data Hub Space onto a map is by using our
-Data Hub Maps JavaScript component in your web pages.
+The easiest way to get data from an XYZ Maps Space onto a map is by using our
+XYZ Maps Maps JavaScript component in your web pages.
 
 ## Maps Playground
 
@@ -8,7 +8,7 @@ that gets you up to speed quickly with the most important concepts. By showing b
 the code and the result it is the best way try out unfamiliar APIs. Because the code is also
 directly editable, you can experiment directly in the browser to try out new things.
 
-[`https://xyz.api.here.com/maps/`](https://xyz.api.here.com/maps/)
+[`https://localhost:8080/maps/`](https://localhost:8080/maps/)
 
 [![Maps UI](../assets/images/maps-playground.png)](../assets/images/maps-playground.png)
 
@@ -46,7 +46,7 @@ forgot something (like closing a bracket or ending a string quote).
 This is probably the most helpful link you can find, and it takes you directly into the `JSDoc`
 documentation site. You can also bookmark this for further reference:
 
-[`https://xyz.api.here.com/maps/latest/documentation`](https://xyz.api.here.com/maps/latest/documentation/index.html)
+[`https://localhost:8080/maps/latest/documentation`](https://localhost:8080/maps/latest/documentation/index.html)
 
 #### Switch Code Views
 

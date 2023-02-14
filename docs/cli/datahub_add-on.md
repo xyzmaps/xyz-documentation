@@ -1,24 +1,20 @@
-# HERE Data Hub Add-on
-
->#### Note
->
->These features require the [Add-On plan](https://developer.here.com/pricing) to use Add-on features. To sign up for access these features, go to: [developer.here.com/pricing](https://developer.here.com/pricing)
+# XYZ Maps Adanced concepts
 
 ## Property Search
 
 Property Search indexes data in your Spaces and lets you use the API to search by property value.
 
-This is currently available in the CLI and the API. Property Search is available for all Spaces with less than 10,000 features. In order to use Property Search on more than 10,000 features and for all properties you want, you'll need a Data Hub Add-on account.
+This is currently available in the CLI and the API. Property Search is available for all Spaces with less than 10,000 features. In order to use Property Search on more than 10,000 features and for all properties you want, you'll need a XYZ Maps Add-on account.
 
-More details are available in the [CLI documentation](basic-features.md#property-search) and the [Swagger API `/search` endpoint](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/searchForFeatures).
+More details are available in the [CLI documentation](basic-features.md#property-search) and the [Swagger API `/search` endpoint](https://localhost:8080/hub/static/swagger/#/Read%20Features/searchForFeatures).
 
 ## <a name="virtual-spaces">Virtual Spaces</a>
 
 Virtual Spaces let you group or associate geospatial features in multiple Spaces and present them as a single Space.
 
-`group` acts as an alias, presenting multiple Data Hub spaces via a single Space ID.
+`group` acts as an alias, presenting multiple XYZ Maps spaces via a single Space ID.
 
-`associate` merges feature properties from one Data Hub space into features in a second space based on feature ID matches. This allows you to import statistical data and merge it with pre-existing polygons on the fly.
+`associate` merges feature properties from one XYZ Maps space into features in a second space based on feature ID matches. This allows you to import statistical data and merge it with pre-existing polygons on the fly.
 
 This is currently available in the CLI and API. For more details, see the [CLI documentation](add-on.md#virtual-spaces)
 
@@ -38,11 +34,11 @@ You can learn more about hexbins and how to display them [in this tutorial](tuto
 
 ## Rule Based Tags
 
-Create tags using conditional rules based on the values of properties in features. This makes it easy to view and extract data from your Data Hub space.
+Create tags using conditional rules based on the values of properties in features. This makes it easy to view and extract data from your XYZ Maps space.
 
 ## Schema Validation
 
-Apply a schema validation JSON file to space to ensure that only valid data is uploaded to a Data Hub space.
+Apply a schema validation JSON file to space to ensure that only valid data is uploaded to a XYZ Maps space.
 
 The schema definition can be in the form of a web address or a local schema JSON file.
 

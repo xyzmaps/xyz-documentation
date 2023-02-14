@@ -2,7 +2,7 @@
 
 > #### Note
 >
-> Your account needs access to the Data Hub Add-on Services.
+> Your account needs access to the XYZ Maps Add-on Services.
 
 1. Create a new space with the activity-log listener and enableUUID set to true:
 
@@ -10,7 +10,7 @@
     POST /spaces
     ```
 
-    *Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit_Spaces/postSpace)*
+    *Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit_Spaces/postSpace)*
 
     ```JSON
     {
@@ -34,7 +34,7 @@
     GET /spaces
     ```
 
-    *Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read_Spaces/getSpaces)*
+    *Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read_Spaces/getSpaces)*
 
     ```JSON
     [
@@ -49,7 +49,7 @@
       {
         "id": "<activityLogSpaceId>",
         "title": "activity-log for space <newSpaceId>",
-        "description": "This is an automatically created space for the history of space __<newSpaceId>__.  \nCreated on 2019-12-02 at 07:31  \n***\nModified features will be stored in this space by their original _uuid_.  \nThe original namespace properties of Data Hub will be stored within the value 'original' of the namespace '@ns:com:here:xyz:log'.  \nIMPORTANT Deleting this space while activity-log is enabled, causes the absence of history.  \n***",
+        "description": "This is an automatically created space for the history of space __<newSpaceId>__.  \nCreated on 2019-12-02 at 07:31  \n***\nModified features will be stored in this space by their original _uuid_.  \nThe original namespace properties of XYZ Maps will be stored within the value 'original' of the namespace '@ns:com:here:xyz:log'.  \nIMPORTANT Deleting this space while activity-log is enabled, causes the absence of history.  \n***",
         "createdAt": 1575271894028,
         "updatedAt": 1575271894028,
         "searchableProperties": {
@@ -67,7 +67,7 @@
     PUT /spaces/<newSpaceId>/features
     ```
 
-    *Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit_Features/putFeatures)*
+    *Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit_Features/putFeatures)*
 
     ```JSON
     {
@@ -91,7 +91,7 @@
     GET /spaces/<activityLogSpaceId>/iterate
     ```
 
-    *Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/iterateFeatures)*
+    *Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/iterateFeatures)*
 
     This results in something similar to:
 
@@ -141,7 +141,7 @@ This request returns an unsorted list of all revisions of the object.
 GET /spaces/<activityLogSpaceId>/search?p.@ns:com:here:xyz:log.id="newFeatureId"
 ```
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/searchForFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/searchForFeatures)*
 
 Response
 
@@ -185,7 +185,7 @@ You can search for a specific revision of a feature using the *uuid* of the feat
 GET /spaces/<activityLogSpaceId>/features/<uuidOfFeature>
 ```
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeature)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeature)*
 
 Response:
 
@@ -234,7 +234,7 @@ You can search for a specific point in time by looking at the *createdAt* and *i
 GET /spaces/<activityLogSpaceId>/search?p.@ns:com:here:xyz:log.original.updatedAt=lte=1575275435508&p.@ns:com:here:xyz:log.invalidatedAt=gt=1575275435508
 ```
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/searchForFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/searchForFeatures)*
 
 Response body:
 

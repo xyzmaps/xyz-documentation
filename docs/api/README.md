@@ -6,7 +6,7 @@ XYZ Maps is a real-time self-hosted location hub for managing, storing, retrievi
 It uses the concepts of **Spaces** to store your data. A Space is your own geospatial
 data repository, which you can quickly create when needed to store data.
 
-To interact with the HERE Data Hub API directly from your application you need to use HERE's public REST APIs. These are simple to use from any application environment - you only need to know how to make RESTful requests.
+To interact with the XYZ Maps API directly from your application you need to use HERE's public REST APIs. These are simple to use from any application environment - you only need to know how to make RESTful requests.
 
 ## Data
 
@@ -32,7 +32,7 @@ You can combine tags in a request by using `,` for `OR` and `+` for `AND`.
 
 ## Iterating
 
-Another core concept when you are working Space is to [iterate](https://xyz.api.here.com/hub/static/redoc/#operation/iterateFeatures) over the content to gather everything that you are interested in.
+Another core concept when you are working Space is to [iterate](https://localhost:8080/hub/static/redoc/#operation/iterateFeatures) over the content to gather everything that you are interested in.
 
 If you access with *a lot* of data, you will retrieve it in parts. With the `limit` parameter, you tell the API how much data you want to see at once. The `handle` is something the
 API gives you together with the data, which you need to provide back when you want to continue to get the next chunk of data.

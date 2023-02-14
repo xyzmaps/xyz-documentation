@@ -6,7 +6,7 @@ Namespaces are used to group objects unambiguously, so they can be addressed wit
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit_Features)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit_Features)*
 
 ```HTTP
 PUT /spaces/{spaceId}/features?addTags=mountain,canada
@@ -74,7 +74,7 @@ with the following body
 }
 ```
 
-When you upload a feature to Data Hub, HERE automatically adds a property *@ns:com:here:xyz* to it. The following information is recorded in this property:
+When you upload a feature to XYZ Maps, XYZ automatically adds a property *@ns:com:here:xyz* to it. The following information is recorded in this property:
 
 + *createdAt* - date and time the feature was created in milliseconds since 01.01.1970
 + *updatedAt* - date and time the feature was updated in milliseconds since 01.01.1970

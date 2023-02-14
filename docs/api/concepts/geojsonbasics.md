@@ -192,7 +192,7 @@ A **FeatureCollection** contains an array of **Features**, contained in a member
 A **GeometryCollection** is a collection of zero or more geometry objects like the ones above in an array member called *geometries*
 
 > #### Warning
-> GeometryCollection is not supported by HERE XYZ Hub. It is included here for completeness.
+> GeometryCollection is not supported by xyzmaps space Hub. It is included here for completeness.
 
 ### Example GeometryCollection
 

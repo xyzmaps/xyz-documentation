@@ -1,6 +1,6 @@
 # Group By in CSV Files
 
-CSV is a flat file format, but the rows often contain hierarchical data associated with a particular region or place. A few examples include election results, census statistics, or time-series data. If more than one row of your CSV contains an ID for the same place, you can use `here xyz upload --groupby` or `here xyz join groupby` to nest the values of a column as unique properties within a single feature. You can then use Virtual Spaces to join the data to existing geometries on the fly.
+CSV is a flat file format, but the rows often contain hierarchical data associated with a particular region or place. A few examples include election results, census statistics, or time-series data. If more than one row of your CSV contains an ID for the same place, you can use `xyzmaps space upload --groupby` or `xyzmaps space join groupby` to nest the values of a column as unique properties within a single feature. You can then use Virtual Spaces to join the data to existing geometries on the fly.
 
 - `--groupby columnName` consolidates multiple rows of a CSV that share a unique ID into a single feature (designated with `-i` (usually representing a admin geography)); values in each row within that selected column will be grouped as nested properties within an object named after the column in the consolidated feature properties.
 - `--groupby` can be used with `upload` or the `join` command to extract the hierarchy from a CSV and upload it to a space without geometries.
@@ -8,7 +8,7 @@ CSV is a flat file format, but the rows often contain hierarchical data associat
 ### upload vs join
 
 - with `join`, the data is uploaded and the virtual space with the geometry space is created in one step.
-- `upload --groupby` is useful for updating the "data space" in a virtual space that has already been created. It can also be used to upload the grouped data before a virtual space has created with a space containing geometries matching geoIDs using `here xyz vs -a`
+- `upload --groupby` is useful for updating the "data space" in a virtual space that has already been created. It can also be used to upload the grouped data before a virtual space has created with a space containing geometries matching geoIDs using `xyzmaps space vs -a`
 
 ### When to use groupby
 
@@ -24,7 +24,7 @@ Imagine a CSV of election results where each row contains a precinct ID, candida
     2,Waters,Blue,10
     2,Rivers,Green,30
 
-However, if we tried to upload this CSV using `-i precinct`, Data Hub would consider each new feature with that unique ID to be an update of the existing feature, which is not what we want.
+However, if we tried to upload this CSV using `-i precinct`, XYZ Maps would consider each new feature with that unique ID to be an update of the existing feature, which is not what we want.
 
 Using `group_by`, we can designate `precinct` as the feature ID, and select the values of `party` to be the nested object. This would generate geojson similar to this
 
@@ -71,24 +71,24 @@ This "data space" has no geometries, but using virtual spaces, it is simple to m
 
 You can upload and merge this CSV two ways, using `upload` or `join`.
 
-    here xyz upload -f http://elections.xyz/results.csv -i precinct --groupby party --noCoords 
-    here xyz vs -a csvSpace,geometrySpace
+    xyzmaps space upload -f http://elections.xyz/results.csv -i precinct --groupby party --noCoords 
+    xyzmaps space vs -a csvSpace,geometrySpace
 
 or
 
-    here xyz join precinctGeometrySpace -f http://elections.xyz/results.csv -i precinctID --groupby party --noCoords 
+    xyzmaps space join precinctGeometrySpace -f http://elections.xyz/results.csv -i precinctID --groupby party --noCoords 
 
-This uploads the CSV into a space where the results for each precinct are consolidated in a GeoJSON feature with no geometry, and the results for each candidate / political party would be nested within a `party` object. With virtual spaces, these are easily merged with a space containing the precinct geometries with the same feature ID. The virtual space ID can then be visualized in a variety of mapping tools. More importantly, the space containing the nested CSV data can be updated each time it is updated by election officials using the `here xyz upload` command specified above, avoiding the work involved in a manual join with a large, nationwide set of geometries.
+This uploads the CSV into a space where the results for each precinct are consolidated in a GeoJSON feature with no geometry, and the results for each candidate / political party would be nested within a `party` object. With virtual spaces, these are easily merged with a space containing the precinct geometries with the same feature ID. The virtual space ID can then be visualized in a variety of mapping tools. More importantly, the space containing the nested CSV data can be updated each time it is updated by election officials using the `xyzmaps space upload` command specified above, avoiding the work involved in a manual join with a large, nationwide set of geometries.
 
-You can try this yourself with [this CSV of election results from the 2019 Canadian Federal Election](data/2019_canadian_federal_election_results.csv) and the shared Data Hub space `mo3sLwE3`, which contains polygons of Canadian electoral precincts.
+You can try this yourself with [this CSV of election results from the 2019 Canadian Federal Election](data/2019_canadian_federal_election_results.csv) and the shared XYZ Maps space `mo3sLwE3`, which contains polygons of Canadian electoral precincts.
 
-    here xyz join mo3sLwE3 -f https://github.com/heremaps/xyz-documentation/raw/master/docs/cli/tutorials/data/2019_canadian_federal_election_results.csv -i District --groupby party
+    xyzmaps space join mo3sLwE3 -f https://github.com/heremaps/xyz-documentation/raw/master/docs/cli/tutorials/data/2019_canadian_federal_election_results.csv -i District --groupby party
     
 ### --promote
     
 There may be fields that you do not want to be nested in each sub-object -- a good example here is the name of the district. You can use `--promote` to keep those properties from being unnecessarily nested.
 
-```here xyz join mo3sLwE3 -f https://github.com/heremaps/xyz-documentation/raw/master/docs/cli/tutorials/data/2019_canadian_federal_election_results.csv -i District --groupby party --promote "District Name","Nom de Circonscription"```
+```xyzmaps space join mo3sLwE3 -f https://github.com/heremaps/xyz-documentation/raw/master/docs/cli/tutorials/data/2019_canadian_federal_election_results.csv -i District --groupby party --promote "District Name","Nom de Circonscription"```
 
 ### --flatten
 
@@ -139,7 +139,7 @@ vs
 
 Another example is COVID-19 data from the Covid Tracking project API.
 
-    here xyz join xkRyxQl9 -f https://covidtracking.com/api/v1/states/daily.csv --noCoords -i state --groupby date
+    xyzmaps space join xkRyxQl9 -f https://covidtracking.com/api/v1/states/daily.csv --noCoords -i state --groupby date
 
 This will merge daily state testing data from March 2020 until today into a virtual space with xkRyxQl9, a shared space with US state geometries. 
 

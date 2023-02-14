@@ -4,7 +4,7 @@ Once you have acquired your credentials, you can determine the spaces to which y
 
 ## Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read_Spaces)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read_Spaces)*
 
 ```HTTP
 GET /spaces

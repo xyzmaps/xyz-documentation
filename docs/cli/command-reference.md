@@ -1,4 +1,4 @@
-# HERE Data Hub CLI Command Reference
+# XYZ Maps CLI Command Reference
 
 In this section you can find all the supported commands and subcommands along with supported options.
 
@@ -6,68 +6,52 @@ In this section you can find all the supported commands and subcommands along wi
 
 ```console
 Commands:
-  configure|c [verify|refresh]            setup configuration for authentication
-  xyz|xs [list|create|upload]             work with Data Hub spaces
+  xyz|xs [list|create|upload]             work with XYZ Maps spaces
   transform|tf [csv2geo|shp2geo|gpx2geo]  convert from csv/shapefile/gpx to geojson
-  geocode|gc                              geocode feature
   help [command]                          display help for command
 ```
 
-### [configure](basic-features.md#log-in-to-your-data-hub-account)
-
-Configure Here Developer account on HERE Data Hub CLI.
-
-```console
-Commands:
-  account         configure HERE account email/password for authentiction.
-                  Account can be created from https://developer.here.com/
-  verify          Verify credentials
-  refresh         Refresh account setup
-  help [command]  display help for command
-```
 
 ### [xyz](basic-features.md#interact-with-data-hub-spaces)
 
-HERE Data Hub Space related operations
+XYZ Maps Space related operations
 
 ```console
 Commands:
-  list|ls [options]        information about available Data Hub Spaces
+  list|ls [options]        information about available XYZ Maps Spaces
   analyze [options] <id>   property based analysis of the content of the
                            given [id]
   hexbin [options] <id>    create fixed height hexbins (and their centroids)
-                           using points in a Data Hub space, and upload them to
+                           using points in a XYZ Maps space, and upload them to
                            another space
   show [options] <id>      shows the content of the given [id]
-  delete [options] <id>    delete the Data Hub Space with the given id
-  create [options]         create a new Data Hub Space
-  clear [options] <id>     clear data from Data Hub Space
-  token [options]          list all Data Hub tokens
+  delete [options] <id>    delete the XYZ Maps Space with the given id
+  create [options]         create a new XYZ Maps Space
+  clear [options] <id>     clear data from XYZ Maps Space
+  token [options]          list all XYZ Maps tokens
   upload [options] [id]    upload GeoJSON, CSV, or a Shapefile to the given
                            id -- if no spaceID is given, a new Space will be
                            created
-  config [options] [id]    configure/view advanced Data Hub features for
+  config [options] [id]    configure/view advanced XYZ Maps features for
                            space
-  join [options] <id>      {Data Hub Add-on} create a new virtual Data Hub
+  join [options] <id>      {XYZ Maps Add-on} create a new virtual XYZ Maps
                            space with a CSV and a Space with geometries,
                            associating by feature ID
-  virtualize|vs [options]  {Data Hub Add-on} create a new virtual Data Hub
+  virtualize|vs [options]  {XYZ Maps Add-on} create a new virtual XYZ Maps
                            space
-  gis [options] <id>       {Data Hub Add-on} perform gis operations with
+  gis [options] <id>       {XYZ Maps Add-on} perform gis operations with
                            Space data
   help [command]           display help for command
 ```
 
 #### [create](basic-features.md#create-a-new-space)
 
-Create a new Data Hub Space.
+Create a new XYZ Maps Space.
 
 ```console
 Options:
   -t, --title [title]       Title for Space
   -d, --message [message]   Short description
-  --token <token>           a external token to create space in other user's
-                            account
   -s, --schema [schemadef]  set json schema definition (local filepath / http
                             link) for your Space, all future data for this
                             Space will be validated for the schema
@@ -76,12 +60,11 @@ Options:
 
 #### [list](basic-features.md#list-spaces)
 
-Information about available Data Hub spaces
+Information about available XYZ Maps spaces
 
 ```console
 Options:
   -r, --raw          show raw Space definition
-  --token <token>    a external token to access another user's Spaces
   --filter <filter>  a comma separted strings to filter Spaces
   -p, --prop <prop>  property fields to include in table (default: [])
   -h, --help         display help for command
@@ -89,7 +72,7 @@ Options:
 
 #### [show](basic-features.md#show-contents-of-a-space)
 
-Shows the contents of the given Data Hub Space.
+Shows the contents of the given XYZ Maps Space.
 
 ```console
 Options:
@@ -102,12 +85,11 @@ Options:
                              in geojson format
   --geojsonl                 to print output of --all in geojsonl format
   -c, --chunk [chunk]        chunk size to use in --all option, default 5000
-  --token <token>            a external token to access another user's space
   -p, --prop <prop>          selection of properties, use p.<FEATUREPROP> or
                              f.<id/updatedAt/tags/createdAt>
-  -w, --web                  display Space on http://geojson.tools
-  -v, --vector               inspect and analyze using Data Hub Space Invader
-                             and tangram.js
+  -w, --web                  display Space on xyzmaps.github.io/geojson-tool/
+  -v, --vector               inspect and analyze using XYZ Maps Space Invader
+                             on xyzmaps.github.io/xyz-space-invader
   -x, --permanent            generate a permanent token for --web and --vector option
   -s, --search <propfilter>  search expression in "double quotes", use single
                              quote to signify string value,  use
@@ -131,7 +113,7 @@ Options:
 
 #### [upload](basic-features.md#uploadupdate-data-to-a-space)
 
-Upload GeoJSON, CSV, or a Shapefile to the given Space -- if no spaceID is given, a new space will be created. GeoJSON feature IDs will be respected unless you override with -o or specify with -i; pipe GeoJSON via stdout using | here xyz upload spaceid
+Upload GeoJSON, CSV, or a Shapefile to the given Space -- if no spaceID is given, a new space will be created. GeoJSON feature IDs will be respected unless you override with -o or specify with -i; pipe GeoJSON via stdout using | xyzmaps space upload spaceid
 
 ```console
   -f, --file <file>               comma separated list of local GeoJSON,
@@ -145,7 +127,7 @@ Upload GeoJSON, CSV, or a Shapefile to the given Space -- if no spaceID is given
                                   properties), use higher values (e.g., 500 to
                                   5000) for faster uploads of small geometries
                                   (points and lines, few properties)
-  -t, --tags [tags]               fixed tags for features uploaded to the Data Hub space
+  -t, --tags [tags]               fixed tags for features uploaded to the XYZ Maps space
   --token <token>                 a external token to upload data to another
                                   user's Space
   -x, --lon [lon]                 longitude field name
@@ -211,13 +193,12 @@ Upload GeoJSON, CSV, or a Shapefile to the given Space -- if no spaceID is given
 
 #### [clear](basic-features.md#clear-a-space)
 
-Clear data from a Data Hub Space.
+Clear data from a XYZ Maps Space.
 
 ```console
 Options:
   -t, --tags <tags>  tags for the Space
   -i, --ids <ids>    ids for the Space
-  --token <token>    a external token to clear another user's Space data
   --force            skip the confirmation prompt
   -h, --help         display help for command
 ```
@@ -229,23 +210,22 @@ Delete a given Space.
 ```console
 Options:
   --force          skip the confirmation prompt
-  --token <token>  a external token to delete another user's space
   -h, --help       display help for command
 ```
 
 #### [token](basic-features.md#list-all-tokens)
 
-List all Data Hub tokens.
+List all XYZ Maps tokens.
 
 ```console
 Options:
-  --console   opens web console for Data Hub
+  --console   opens web console for XYZ Maps
   -h, --help  display help for command
 ```
 
 #### [config](basic-features.md#get-or-update-more-information-about-your-spaces)
 
-Configure/view advanced Data Hub features for a Space.
+Configure/view advanced XYZ Maps features for a Space.
 
 ```console
 Options:
@@ -258,8 +238,6 @@ Options:
   --cacheTTL <cacheTTL>       set cacheTTL value for the Space with valid
                               number
   --stats                     see detailed space statistics
-  --token <token>             a external token to access another user's Space
-                              config and stats information
   -r, --raw                   show raw json output
   -s,--schema [schemadef]     view or set schema definition (local filepath /
                               http link) for your Space, applicable on future
@@ -281,7 +259,7 @@ Options:
                               view the respective configurations
   --activitylog               configure activity logs for your Space
                               interactively
-  --console                   opens web console for Data Hub
+  --console                   opens web console for XYZ Maps
   -h, --help                  display help for command
 ```
 

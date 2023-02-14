@@ -2,7 +2,7 @@
 
 > #### Note
 >
-> Your account needs access to the Data Hub Add-on Services.
+> Your account needs access to the XYZ Maps Add-on Services.
 
 To use Schema Validation, you need to put additional data into the space
 definition. Add a processor with the ID *schema-validator* and put
@@ -30,7 +30,7 @@ the param *schema*:
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Spaces/postSpace)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Spaces/postSpace)*
 
 ```HTTP
 POST /spaces
@@ -67,7 +67,7 @@ POST /spaces
         {
             "id": "schema-validator",
             "params": {
-                 "schemaUrl": "<Location of schema in the Data Hub managed S3 bucket>"
+                 "schemaUrl": "<Location of schema in the XYZ Maps managed S3 bucket>"
              }
         }
     ]
@@ -76,7 +76,7 @@ POST /spaces
 ```
 
 Note that the field *schema* has been replaced with a field *schemaUrl*
-that points to a private copy in the Data Hub S3 bucket.
+that points to a private copy in the XYZ Maps S3 bucket.
 
 ## Validating your data
 
@@ -88,7 +88,7 @@ returned. Note that the position is zero based, so 0 is the first object,
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Features/putFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Features/putFeatures)*
 
 ```HTTP
 PUT /spaces/{spaceId}/features
@@ -205,7 +205,7 @@ new schema JSON string or URL.
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Spaces/patchSpace)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Spaces/patchSpace)*
 
 ```HTTP
 PATCH /spaces/{spaceId}
@@ -238,7 +238,7 @@ PATCH /spaces/{spaceId}
         {
             "id": "schema-validator",
             "params": {
-                 "schemaUrl": "<Location of updated schema in the Data Hub managed S3 bucket>"
+                 "schemaUrl": "<Location of updated schema in the XYZ Maps managed S3 bucket>"
              }
         }
 
@@ -256,7 +256,7 @@ you will disable all processors.
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Edit%20Spaces/patchSpace)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Edit%20Spaces/patchSpace)*
 
 ```HTTP
 PATCH /spaces/{spaceId}

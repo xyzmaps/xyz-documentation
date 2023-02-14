@@ -1,6 +1,6 @@
 # Use Clustering - quadbin
 
-This section describes how to retrieve features from Data Hub inside a tile in a
+This section describes how to retrieve features from XYZ Maps inside a tile in a
 clustered form. Two different clustering modes, "hexbin" and "quadbin", are available.
 
 * "quadbin" - gives the amount of features in tiles and subtiles. Purpuse is to give a fast overview on dataset locations on lower zoom levels. The quadbins corresponds to the webmercator tiling scheme. 
@@ -21,7 +21,7 @@ a property filter on one property is applicable.
 There are several parameters needed by the quadbin algorithm. You can use one property filter in combination.
 #### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesByTile)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeaturesByTile)*
 
 ```HTTP
 GET /spaces/{spaceId}/tile/{type}/{tileId}?clustering=quadbin&clustering.relativeResolution={aNumber}&clustering.countmode={cmode}

@@ -4,7 +4,7 @@
 
 > #### Note
 >
-> Your account needs access to the Data Hub Add-on Services.
+> Your account needs access to the XYZ Maps Add-on Services.
 
 If you just want to use the Activity Log, go to the [quick start guide](../quickstart/activitylog.md).
 
@@ -31,8 +31,8 @@ To activate it, create a space with the listener added and enableUUID set to tru
 The storage mode decides how the features will be stored.
 
 * **FEATURE_ONLY**: Will store features with some history relative properties (defined below).
-* **DIFF_ONLY**: Will store features with a 'diff'.'ops' property in the Data Hub activity-Log namespace, containing the RFC-6902 diff to its previous object. The features after the HEAD will only contain the Data Hub activity-log & Data Hub namespace properties.
-* **FULL**: Will store features with some history relative properties and a 'diff'.'ops' property in the Data Hub Activity Log namespace, containing the RFC-6902 diff to its previous object.
+* **DIFF_ONLY**: Will store features with a 'diff'.'ops' property in the XYZ Maps activity-Log namespace, containing the RFC-6902 diff to its previous object. The features after the HEAD will only contain the XYZ Maps activity-log & XYZ Maps namespace properties.
+* **FULL**: Will store features with some history relative properties and a 'diff'.'ops' property in the XYZ Maps Activity Log namespace, containing the RFC-6902 diff to its previous object.
 
 **ATTENTION**: Applying the diff to the current feature will return the previous (older) feature. This means that adding a new property to a feature, will be shown as 'remove' & 'pathToNewProperty' in the diff of the current.
 

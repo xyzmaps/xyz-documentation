@@ -1,6 +1,3 @@
-# Add-on features via HERE Data Hub CLI
-
-In this section we give you a quick overview of the advanced HERE Data Hub CLI commands for Data Hub Add-on features in Data Hub Spaces.
 
 ## Schema Validation for GeoJSON data
 
@@ -17,20 +14,20 @@ You can configure the JSON schema definition for an existing space using the 'co
 
 > #### Note
 >
-> Data Hub Schema Validation expects a GeoJSON feature schema to validate against the uploaded data.
+> XYZ Maps Schema Validation expects a GeoJSON feature schema to validate against the uploaded data.
 
 #### Add/Update schema
 
 To set a new schema definition or update an existing schema definition for a space using a local file or a URL:
 
 ```console
-here xyz config YOUR_SPACE_ID --add --schema [LOCAL_FILE_PATH | SCHEMA_HTTP_URL]
+xyzmaps space config YOUR_SPACE_ID --add --schema [LOCAL_FILE_PATH | SCHEMA_HTTP_URL]
 ```
 
 You can add a schema definition to a space while creating it as well:
 
 ```console
-here xyz create -t <SPACE_TITLE> -d <SPACE_DESCRIPTION> --schema [LOCAL_FILE_PATH | SCHEMA_HTTP_URL]
+xyzmaps space create -t <SPACE_TITLE> -d <SPACE_DESCRIPTION> --schema [LOCAL_FILE_PATH | SCHEMA_HTTP_URL]
 ```
 
 ### View schema
@@ -38,7 +35,7 @@ here xyz create -t <SPACE_TITLE> -d <SPACE_DESCRIPTION> --schema [LOCAL_FILE_PAT
 To view the schema definition configured on a space:
 
 ```console
-here xyz config YOUR_SPACE_ID --schema --view
+xyzmaps space config YOUR_SPACE_ID --schema --view
 ```
 
 Sample output:
@@ -63,7 +60,7 @@ Sample output:
 To delete a schema definition for a space:
 
 ```console
-here xyz config YOUR_SPACE_ID --schema --delete
+xyzmaps space config YOUR_SPACE_ID --schema --delete
 ```
 
 ## Rule Based Tags
@@ -102,7 +99,7 @@ Look at the following example feature and corresponding sample tag rule conditio
     "category": "Coffee Shop",
     "costCategory": "High",
     "opensEarly": true,
-    "name": "Data Hub Cafe"
+    "name": "XYZ Maps Cafe"
   },
   "type": "Feature"
 }
@@ -118,7 +115,7 @@ Look at the following example feature and corresponding sample tag rule conditio
 ### Add a tag rule
 
 ```console
-here xyz config <spaceId> –tagrules --add
+xyzmaps space config <spaceId> –tagrules --add
 ```
 
 ![add_tagrule](images/gifs/cli-tagrule-add.gif)
@@ -126,7 +123,7 @@ here xyz config <spaceId> –tagrules --add
 For example,
 
 ```console
-$ here xyz config  HJtXzHWi --tagrules --add
+$ xyzmaps space config  HJtXzHWi --tagrules --add
 Starting to add a new synchronous rule to automatically tag features..
 ? Enter a tag name you would like to assign :   => opensEarly
 
@@ -137,19 +134,19 @@ Starting to add a new synchronous rule to automatically tag features..
 ### View tag rules
 
 ```console
-here xyz config <spaceId> –-tagrules  or here xyz config  <spaceId> –tagrules --view
+xyzmaps space config <spaceId> –-tagrules  or xyzmaps space config  <spaceId> –tagrules --view
 ```
 
 ### Delete tag rules
 
 ```console
-here xyz config <spaceId>  –-tagrules --delete
+xyzmaps space config <spaceId>  –-tagrules --delete
 ```
 
 ### Update tagrule [Users can update tagrule name and conditions using update command]
 
 ```console
-here xyz config <spaceId>  –-tagrules --update
+xyzmaps space config <spaceId>  –-tagrules --update
 ```
 
 ![update_tagrule](images/gifs/cli-tagrule-update.gif)
@@ -157,7 +154,7 @@ here xyz config <spaceId>  –-tagrules --update
 e.g.:
 
 ```console
-$ here xyz config 4HTUXtve --tagrules --update
+$ xyzmaps space config 4HTUXtve --tagrules --update
 ? Select tag rule to be updated (Use arrow keys)
   largeGroupFriendly , rule : p.details.capacity > 16 && p.details.employees > 8 , mode : sync
 > coffeeShop , rule : p.category == "Coffee Shop" , mode: sync
@@ -173,13 +170,13 @@ tagrules updated successully!
 
 ## Searchable Properties
 
-Data Hub automatically indexes certain properties based on the number of features in your Space. If you have 10,000 features or fewer in a space, all properties are searchable.
-If a property is not automatically indexed, you can force it to be indexed using the `--searchable` option. This is where you'll need a Data Hub Add-On licence.
+XYZ Maps automatically indexes certain properties based on the number of features in your Space. If you have 10,000 features or fewer in a space, all properties are searchable.
+If a property is not automatically indexed, you can force it to be indexed using the `--searchable` option. This is where you'll need a XYZ Maps Add-On licence.
 
 ### Add Searchable Properties
 
 ```console
-$ here xyz config <spaceId> --searchable --add
+$ xyzmaps space config <spaceId> --searchable --add
 ? Enter the property name to make searchable (create index on ):    =>  address
 ```
 
@@ -188,13 +185,13 @@ $ here xyz config <spaceId> --searchable --add
 ### View Searchable Properties
 
 ```console
-here xyz config <spaceId> --searchable --view
+xyzmaps space config <spaceId> --searchable --view
 ```
 
 e.g
 
 ```console
-$ here xyz config fgtdc6tz --searchable –-view
+$ xyzmaps space config fgtdc6tz --searchable –-view
 
 | PropertyName       | Mode         | Searchable     |
 | ------------------ | ------------ | -------------- |
@@ -205,14 +202,14 @@ $ here xyz config fgtdc6tz --searchable –-view
 ### Delete Searchable Properties [User can delete one or all searchable properties using delete command]
 
 ```console
-here xyz config <spaceId> --searchable --delete
+xyzmaps space config <spaceId> --searchable --delete
 ```
 
 ![delete_searchable](images/gifs/cli-searchable-delete.gif)
 
 ## Activity Log
 
-Activity Log tracks what has been written, modified, and deleted in a Data Hub Space. The changes are written to a second space, with options to show
+Activity Log tracks what has been written, modified, and deleted in a XYZ Maps Space. The changes are written to a second space, with options to show
 
 - FEATURE_ONLY (default): Just the full new version of the feature, with the id moved. No diff to previous.
 - DIFF_ONLY: Head (newest object) is the full feature. All older versions are only a Diff to the successor. In order from newest to oldest: Obj1: Newest, full Feature + Diff to Obj2-> Obj2: Diff to Obj3 -> Obj3: Diff to Obj4 -> Obj4 …
@@ -221,7 +218,7 @@ Activity Log tracks what has been written, modified, and deleted in a Data Hub S
 ### Check or enable Activity Log
 
 ```console
-here xyz config <spaceId> --activitylog
+xyzmaps space config <spaceId> --activitylog
 ```
 
 ![enable_activitylog](images/gifs/cli-activitylog-enable.gif)
@@ -229,7 +226,7 @@ here xyz config <spaceId> --activitylog
 e.g:
 
 ```console
-$ here xyz config jsopziJd --activitylog
+$ xyzmaps space config jsopziJd --activitylog
 activity log for this space is not enabled.
 
 ? Select action for activity log (Use arrow keys)
@@ -258,26 +255,26 @@ You can use the same command to check the activity log status, disable or re-con
 
 > #### Note
 >
-> To use this feature, your account needs access to the Data Hub Add-on Services.
+> To use this feature, your account needs access to the XYZ Maps Add-on Services.
 
 Virtual Spaces give users access to multiple spaces with one ID. Group lets you bundle your spaces together, and changes get written back to their original spaces. Associate lets you make your own personal edits to a shared space or one with public data, merging the properties of objects with the same feature ID.
 
 ```console
-here xyz virtualize|vs -a|-g space1,space2
+xyzmaps space virtualize|vs -a|-g space1,space2
 ```
 
 ### Group
 
 ```console
-here xyz virtualize -g space1,space2,...
+xyzmaps space virtualize -g space1,space2,...
 ```
 
-`group` takes multiple Data Hub spaces and presents them via a single Data Hub space ID. Duplicates can occur. Any updates will be made to the original spaces.
+`group` takes multiple XYZ Maps spaces and presents them via a single XYZ Maps space ID. Duplicates can occur. Any updates will be made to the original spaces.
 
 ### Associate
 
 ```console
-here xyz vs -a space1,space2
+xyzmaps space vs -a space1,space2
 ```
 
 `associate` takes features from `space1` and merges their properties into features with the same feature id in `space2`.
@@ -286,7 +283,7 @@ One way of using `virtualize` is to upload CSVs of census data with unique geoID
 
 ### Options
 
-`-t,--title [title]` Title for virtual Data Hub space
+`-t,--title [title]` Title for virtual XYZ Maps space
 
 `-d,--message [message]` set description for the space
 
@@ -301,14 +298,14 @@ One way of using `virtualize` is to upload CSVs of census data with unique geoID
 The `join` command simplifies use of virtual spaces when using CSV tables and existing geometries. You can designate a CSV column to be the feature ID, and use the `associate` virtual spaces option to join it with a space with geometries that use the same set of feature IDs.
 
 ```console
-here xyz join space_with_geometries -f data_table.csv -k column_with_id
+xyzmaps space join space_with_geometries -f data_table.csv -k column_with_id
 ```
 
 > #### Note
 >
 > `join` creates a space of features with no geometries. You can inspect this space using geojson.tools via `show -w`.
 >
-> You can update this "csv space" using `here xyz upload spaceID -f new.csv -k id --noGeom` and
+> You can update this "csv space" using `xyzmaps space upload spaceID -f new.csv -k id --noGeom` and
 > the next time the virtual space ID is references, the properties will contain the updated values.
 
 #### Join Options
@@ -341,12 +338,12 @@ here xyz join space_with_geometries -f data_table.csv -k column_with_id
 >
 > `join` creates a space of features with no geometries. You can inspect this space using geojson.tools via `show -w`.
 >
-> You can update this "csv space" using `here xyz upload spaceID -f new.csv -k id --noGeom` and
+> You can update this "csv space" using `xyzmaps space upload spaceID -f new.csv -k id --noGeom` and
 > the next time the virtual space ID is references, the properties will contain the updated values.
 
 ## GIS
 
-The CLI has access to a number of convenient geospatial data functions via the `here xyz gis` command. Some of these functions add properties to the original features, while others create data in a new space. These functions are based on popular JavaScript tools like turf.js and D3, and are [designed to be modular](https://github.com/heremaps/here-cli/blob/master/src/gisUtil.ts) so you can easily add your own.
+The CLI has access to a number of convenient geospatial data functions via the `xyzmaps space gis` command. Some of these functions add properties to the original features, while others create data in a new space. These functions are based on popular JavaScript tools like turf.js and D3, and are [designed to be modular](https://github.com/xyzmaps/xyz-cli/blob/master/src/gisUtil.ts) so you can easily add your own.
 
 ### Options
 
@@ -379,28 +376,28 @@ The CLI has access to a number of convenient geospatial data functions via the `
 - `--area` uses `turf.js` to calculate the area of polygons, and saves this as a set of new properties in each polygon feature. `xyz_area_sqmiles,'xyz_area_sqkm` are rounded for display convenience, and `xyz_area_sqm` is not rounded.
 - `--length` uses `turf.js` to calculate the length of lines in a space, and saves this as a set of new properties in each linestring feature, `xyz_length_miles`,`xyz_length_km` which are rounded for display convenience, and `xyz_length_m` which is not rounded.
 - `--centroid` uses `turf.js` to calculate the center of each polygon in a space. By default, these points are written to a new space, but can saved in the existing space using the `--samespace` option. In either case, they all receive a `centroid` tag.
-- `--voronoi` uses `d3-delaunay.js` to generate Voronoi polygons from points in a Data Hub space. The edges of these polygons are equidistant from two points, and the vertices are equidistant to three points. By default, they are written to a new space, but can saved in the source point space using the `--samespace` option. In either case, they all receive a `voronoi` tag.
-- `--tin` uses `d3-delaunay.js` to generate Delaunay triangles from points in a Data Hub space. This process maximizes the minimum angle of all the angles of the triangles created from the source points. By default, they are written to a new space, but can saved in the source point space using the `--samespace` option. In either case, they all receive a `tin` tag.
+- `--voronoi` uses `d3-delaunay.js` to generate Voronoi polygons from points in a XYZ Maps space. The edges of these polygons are equidistant from two points, and the vertices are equidistant to three points. By default, they are written to a new space, but can saved in the source point space using the `--samespace` option. In either case, they all receive a `voronoi` tag.
+- `--tin` uses `d3-delaunay.js` to generate Delaunay triangles from points in a XYZ Maps space. This process maximizes the minimum angle of all the angles of the triangles created from the source points. By default, they are written to a new space, but can saved in the source point space using the `--samespace` option. In either case, they all receive a `tin` tag.
 
 ## CLI Hexbins
 
-CLI Hexbins are a data simplification method that makes it easier to visualize large datasets of point features at low zoom levels (e.g., a continent, country, or state/province). A series of hexagon grids are created. The points that fall inside each of them are counted and written to a new Data Hub space, and statistics are calculated across the hexbin grid.
+CLI Hexbins are a data simplification method that makes it easier to visualize large datasets of point features at low zoom levels (e.g., a continent, country, or state/province). A series of hexagon grids are created. The points that fall inside each of them are counted and written to a new XYZ Maps space, and statistics are calculated across the hexbin grid.
 
 These differ from the H3 hexbins generated via server-side clustering in a number of ways. CLI Hexbins use the `iterate` endpoint to calculate and write hexbins to a space across the specified zoom levels, while server-side hexbins are generated on the fly for each zoom level. CLI Hexbins for a specified zoom level can be viewed at any other zoom level using tags -- for example, CLI hexbins or their centroids generated at zoom level 15 can be viewed at zoom level 5 via the hexbin space, whereas server-side hexbins cannot. Server-side hexbins have detailed statistics for the values in a particular hexbin, but CLI hexbins have built-in color formatting and global "occupancy" percentages. CLI hexbins also can generate "subcounts" of unique values across a dataset.
 
 These hexagons (or their centroids) and their statistics can be quickly displayed in place of the raw data that might overwhelm a renderer. Default colors indicating relative "occupancy" are generated for convenience of display.
 
-  `here xyz hexbin spaceID -z 5-10` create hexbins appropriate for zoom levels 5 through 10
+  `xyzmaps space hexbin spaceID -z 5-10` create hexbins appropriate for zoom levels 5 through 10
 
-  `here xyz hexbin spaceID -z 8,10,12` create hexbins appropriate for zoom levels 8,10,12
+  `xyzmaps space hexbin spaceID -z 8,10,12` create hexbins appropriate for zoom levels 8,10,12
 
-   `here xyz hexbin spaceID -c 100,1000,100000` create hexbins that are 100 meters, 1 km and 10 km wide
+   `xyzmaps space hexbin spaceID -c 100,1000,100000` create hexbins that are 100 meters, 1 km and 10 km wide
 
 Hexbins are tagged by zoom level, width, and type, making it easy to extract one set from the hexbin space for display and comparison.
 
 You can learn more about hexbins and how to display them [in this tutorial](tutorials/cli_hexbins.md).
 
-### Data contained in Data Hub Hexbins
+### Data contained in XYZ Maps Hexbins
 
 Hexbin features contain various values that can help with analysis and visualization:
 
@@ -436,10 +433,10 @@ Hexbin features contain various values that can help with analysis and visualiza
 
 ### Hexbin sum and average
 
-If a property is qualitative (property values, income, population), in addition to counting points, Data Hub Hexbins can add up the value of the properties in each hexbin as well as calculate the average.
+If a property is qualitative (property values, income, population), in addition to counting points, XYZ Maps Hexbins can add up the value of the properties in each hexbin as well as calculate the average.
 
 ```console
-$ here xyz hexbin spaceID -z 10 -a incidents
+$ xyzmaps space hexbin spaceID -z 10 -a incidents
 "sum": {
   "sum": 4071,
   "maxSum": 5117,
@@ -453,7 +450,7 @@ $ here xyz hexbin spaceID -z 10 -a incidents
 You can also specify a `subcount` within each hexbin based upon the count of the values of particular property.
 
 ```console
-`here xyz hexbin spaceID -z 8-12 -p business_type`
+`xyzmaps space hexbin spaceID -z 8-12 -p business_type`
 ```
 
 This would create a `subcount` object in each hexbin, which would contain the relative count of that property value across the hexbin grid.
@@ -497,12 +494,6 @@ This would create a `subcount` object in each hexbin, which would contain the re
 
 `-a, --aggregate <aggregate>`    name of the feature property used for aggregating sum
                                  value of all the features inside a hexbin
-
-`-r, --readToken <readToken>`    token of another user's source space, from which points
-                                 will be read
-
-`-w, --writeToken <writeToken>`  token of another user's target space to which hexbins
-                                 will be written
 
 `-t, --tags <tags>`              only make hexbins for features in the source space that
                                  match the specific tag(s), comma-separate multiple values

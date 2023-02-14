@@ -36,7 +36,7 @@ E.g. setting "vizSampling=med" when requesting a specific tile, will calculate t
 
 #### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesByTile)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeaturesByTile)*
 
 ```HTTP
 GET /spaces/{spaceId}/tile/{type}/{tileId}?mode=viz&vizSampling=med&selection=*

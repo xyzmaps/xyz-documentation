@@ -11,7 +11,7 @@ helps to check which of the properties in your space can be searched.
 
 > #### Note
 >
-> Data Hub has a space-specific algorithm to automatically decide which of the space's properties
+> XYZ Maps has a space-specific algorithm to automatically decide which of the space's properties
 > are searchable. In case you desire other properties to be searchable, refer to
 > the guide at ["Adjust searchable properties"](searchableproperties.md).*
 
@@ -19,7 +19,7 @@ To check which of the properties in your space a search can be performed on, che
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getStatistics)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getStatistics)*
 
 ```HTTP
 GET /spaces/{spaceId}/statistics
@@ -93,10 +93,10 @@ In case of `PARTIAL` you can find the more detailed `searchable` boolean flags i
 ## Search for features in the space
 
 Using one of the API endpoints
-[`/spaces/{spaceId}/search`](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/searchForFeatures),
-[`/spaces/{spacesId}/bbox`](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesByBBox)
+[`/spaces/{spaceId}/search`](https://localhost:8080/hub/static/swagger/#/Read%20Features/searchForFeatures),
+[`/spaces/{spacesId}/bbox`](https://localhost:8080/hub/static/swagger/#/Read%20Features/getFeaturesByBBox)
 or
-[`/spaces/{spaceId}/tile`](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesByTile),
+[`/spaces/{spaceId}/tile`](https://localhost:8080/hub/static/swagger/#/Read%20Features/getFeaturesByTile),
 you can retrieve a set of features in your space matching a specified
 query. Such a query could look like:
 

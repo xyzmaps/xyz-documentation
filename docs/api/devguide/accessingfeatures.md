@@ -1,6 +1,6 @@
 # Access Features
 
-This section describes how to get features from HERE Data Hub by using a bounding box or a tile, and iterating features.
+This section describes how to get features from XYZ Maps by using a bounding box or a tile, and iterating features.
 
 ## Get Features by Bounding Box
 
@@ -8,7 +8,7 @@ You can get features from Spaces using a bounding box.
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesByBBox)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeaturesByBBox)*
 
 ```HTTP
 GET /spaces/{spaceId}/bbox?west={westLongitude}&north={northLatitude}&east={eastLongitude}&south={southLatitude}
@@ -62,7 +62,7 @@ You can get features from Spaces using a tileID.
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesByTile)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeaturesByTile)*
 
 ```HTTP
 GET /spaces/{spaceId}/tile/{type}/{tileId}
@@ -116,7 +116,7 @@ The request allows iterating through the features in Spaces. The features in the
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/iterateFeatures)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/iterateFeatures)*
 
 ```HTTP
 GET /spaces/{spaceId}/iterate

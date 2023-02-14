@@ -2,13 +2,13 @@
 
 > #### Note
 >
-> The endpoint for the API is <https://xyz.api.here.com/hub>.
+> The endpoint for the API is <https://localhost:8080/hub>.
 
 Searching by bounding box is searching a rectangle area of the map for features.
 
 ## Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Spaces/getFeaturesByBBox)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Spaces/getFeaturesByBBox)*
 
 ```HTTP
 GET /spaces/{spaceId}/bbox?west=-110&north=53&east=-130&south=50&tags=

@@ -22,7 +22,7 @@ The easiest way for providing a search Geometry is submitting it via a POST-Requ
 
 ### Referencing an existing Geometry for a Spatial Search
 
-Another way to provide a search Geometry is to read it from a existing Feature, which is stored in a Data Hub Space
+Another way to provide a search Geometry is to read it from a existing Feature, which is stored in a XYZ Maps Space
 that you have access to. This is recommended if your search Geometry is very complex, or if you want to store
 frequently used Geometries for spatial searches.
 
@@ -39,7 +39,7 @@ You can combine the spatial search requests with defining:
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesBySpatial)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeaturesBySpatial)*
 
 Spatial-Search by referencing a position (lat,lon) & defining a radius indicated in meters:
 
@@ -47,7 +47,7 @@ Spatial-Search by referencing a position (lat,lon) & defining a radius indicated
 GET /spaces/{spaceId}/spatial?lon={Longitude}&lat={Latitude}&radius={raduisInMeters}
 ```
 
-Spatial-Search by referencing a Feature from a Data Hub Space:
+Spatial-Search by referencing a Feature from a XYZ Maps Space:
 
 ```HTTP
 GET /spaces/{spaceId}/spatial?refSpaceId={referencedSpace}&refFeatureId
@@ -100,7 +100,7 @@ GET /spaces/{spaceId}/spatial?refSpaceId={referencedSpace}&refFeatureId
 
 ### Request
 
-*Try in [Swagger](https://xyz.api.here.com/hub/static/swagger/#/Read%20Features/getFeaturesBySpatialPost)*
+*Try in [your local Swagger](http://localhost:8888/hub/static/swagger/#/Read%20Features/getFeaturesBySpatialPost)*
 
 Spatial-Search by posting a Geometry:
 
