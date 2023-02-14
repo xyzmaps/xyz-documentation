@@ -20,7 +20,7 @@ that enable everyone to make maps easier and faster.
 At its core XYZ Maps is a collection of tools and APIs to enable everyone to easily
 manage map data and build great maps. It is built around standards like
 [GeoJSON](http://geojson.org/) and designed to be **open** and **interoperable**
-with many other offerings. Most important of all, HERE Data Hub offers
+with many other offerings. Most important of all, XYZ Maps offers
 real-time **live** interaction with location data.
 
 ## Quick start

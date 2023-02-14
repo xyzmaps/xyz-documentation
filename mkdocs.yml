@@ -11,7 +11,7 @@ repo_url: https://github.com/xyzmaps/xyz-documentation
 #edit_uri:
 
 # Copyright
-copyright: 'Copyright &copy; 2022-2023 XYZ Maps and contributors, 2018-2021 HERE Europe B.V.'
+copyright: 'Copyright &copy; 2022-2023 XYZ Maps and contributors'
 
 # Configuration
 theme:
@@ -93,7 +93,6 @@ nav:
           - Command reference: cli/command-reference.md
       - XYZ Space Invader: cli/space-invader/index.md
       - XYZ Spaces for Python: cli/tools#xyz-spaces-for-python
-      - Maps API for Javascript: cli/tools#here-maps-api-for-javascript
       - GeoJSON Viewer:
           - Overview: cli/viewer-tool/index.md
           - GeoJSON Basics: api/concepts/geojsonbasics.md
