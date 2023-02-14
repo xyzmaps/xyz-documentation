@@ -32,6 +32,7 @@ theme:
   palette:
     primary: white
   logo: assets/images/logo.svg
+  favicon: assets/images/favicon.png
 
 
 # Page tree
