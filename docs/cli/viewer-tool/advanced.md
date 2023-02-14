@@ -49,11 +49,11 @@ GeoJSON can also be loaded and visualized directly by passing the source of the 
 
 > #### Example "Single source"
 >
-> <http://geojson.tools/?url=http://cms.in.here.com/v2/road/pvid/809297026?clientId=sis>
+> <https://xyzmaps.github.io/geojson-tool/?url=http://cms.in.here.com/v2/road/pvid/809297026?clientId=sis>
 
 > #### Example "Multiple sources"
 >
-> <http://geojson.tools/?url=http://cms.in.here.com/v2/road/pvid/809297026?clientId=sis;http://cms.in.here.com/v2/road/pvid/62884993?clientId=sis>
+> <https://xyzmaps.github.io/geojson-tool/?url=http://cms.in.here.com/v2/road/pvid/809297026?clientId=sis;http://cms.in.here.com/v2/road/pvid/62884993?clientId=sis>
 
 #### Embedding the viewer
 
@@ -61,6 +61,6 @@ The GeoJSON tool can be used to embed a map with features on any web page using 
 
 > #### Example
 >
-> <http://geojson.tools/?url=http://cms.in.here.com/v2/road/pvid/809297026?clientId=sis&maponly=true>
+> <https://xyzmaps.github.io/geojson-tool/?url=http://cms.in.here.com/v2/road/pvid/809297026?clientId=sis&maponly=true>
 >
 > [![Tool Overview](../images/maponly.png)](../images/maponly.png)

@@ -1,4 +1,4 @@
-# Getting Started with XYZ Maps Maps JS
+# Getting Started with XYZ Maps UI
 
 Even when you're using a Playground sample as a starting point, it's good to know the mechanics of the
 data ends up on the map. And when you're starting from scratch, it's vital that you understand how to
@@ -37,15 +37,7 @@ make all of it happen yourself.
 
       // configure layers
       var layers = [
-          new here.xyz.maps.layers.TileLayer({
-            name: 'Image Layer',
-                min: 1,
-                max: 20,
-                provider: new here.xyz.maps.providers.ImageProvider({
-            name: 'Live Map',
-              url : 'https://{SUBDOMAIN_INT_1_4}.mapcreator.tilehub.api.here.com/tilehub/wv_livemap_bc/png/sat/256/{QUADKEY}?access_token='+YOUR_ACCESS_TOKEN
-                })
-          })
+        // TODO 
       ]
     </script>
     ```

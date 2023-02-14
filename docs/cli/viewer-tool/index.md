@@ -6,7 +6,7 @@ that can quickly display data from various sources, highlight and inspect specif
 > #### Hint: GeoJSON Tool URL
 >
 > Bookmark the GeoJSON Tool at:
-> [http://geojson.tools/](http://geojson.tools/)
+> [https://xyzmaps.github.io/geojson-tool/](https://xyzmaps.github.io/geojson-tool/)
 
 ![XYZ Maps GeoJSON Tool](images/viewer.png)
 

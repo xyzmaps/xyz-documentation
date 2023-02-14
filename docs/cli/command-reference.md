@@ -2,17 +2,23 @@
 
 In this section you can find all the supported commands and subcommands along with supported options.
 
-## here
+!!! warning "XYZ CLI is not fully updated"
+
+    XYZ CLI is currently being updated to reflect the fork and resulting changes
+    in moving to a **free and open source version of XYZ Maps**. 
+
+
+## xyzmaps
 
 ```console
 Commands:
-  xyz|xs [list|create|upload]             work with XYZ Maps spaces
+  space|xs [list|create|upload]             work with XYZ Maps spaces
   transform|tf [csv2geo|shp2geo|gpx2geo]  convert from csv/shapefile/gpx to geojson
   help [command]                          display help for command
 ```
 
 
-### [xyz](basic-features.md#interact-with-data-hub-spaces)
+### [space](basic-features.md#interact-with-data-hub-spaces)
 
 XYZ Maps Space related operations
 
@@ -211,16 +217,6 @@ Delete a given Space.
 Options:
   --force          skip the confirmation prompt
   -h, --help       display help for command
-```
-
-#### [token](basic-features.md#list-all-tokens)
-
-List all XYZ Maps tokens.
-
-```console
-Options:
-  --console   opens web console for XYZ Maps
-  -h, --help  display help for command
 ```
 
 #### [config](basic-features.md#get-or-update-more-information-about-your-spaces)

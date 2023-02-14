@@ -253,10 +253,6 @@ You can use the same command to check the activity log status, disable or re-con
 
 ## Virtual Spaces
 
-> #### Note
->
-> To use this feature, your account needs access to the XYZ Maps Add-on Services.
-
 Virtual Spaces give users access to multiple spaces with one ID. Group lets you bundle your spaces together, and changes get written back to their original spaces. Associate lets you make your own personal edits to a shared space or one with public data, merging the properties of objects with the same feature ID.
 
 ```console

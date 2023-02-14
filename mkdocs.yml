@@ -11,7 +11,7 @@ repo_url: https://github.com/xyzmaps/xyz-documentation
 #edit_uri:
 
 # Copyright
-copyright: 'Copyright &copy; 2022-2023 XYZ Maps and contributors'
+copyright: "Copyright &copy; 2022-2023 XYZ Maps and contributors"
 
 # Configuration
 theme:
@@ -34,56 +34,53 @@ theme:
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.png
 
-
 # Page tree
 nav:
   - Introduction: index.md
   - Getting Started: getting-started.md
-  - XYZ Maps APIs:
-      - XYZ Maps API:
-          - Overview: api/index.md
-          - Quick Start:
-              - Read Spaces: api/quickstart/readspaces.md
-              - Create a Space: api/quickstart/createspace.md
-              - Write to a Space: api/quickstart/writetospace.md
-              - Use Activity Log: api/quickstart/activitylog.md
-          - Concepts:
-              - GeoJSON Basics: api/concepts/geojsonbasics.md
-              - Namespaces: api/concepts/namespaces.md
-              - Tags and Tagging: api/concepts/tags.md
-              - Tiles: api/concepts/tiles.md
-              - JSON Schema: api/concepts/jsonschema.md
-          - Walkthrough:
-              - Create a Space: api/walkthrough/creatingaspace.md
-              - Add and Delete Features: api/walkthrough/addinganddeleting.md
-              - Search by Bounding Box: api/walkthrough/searchbyboundingbox.md
-              - Search by Tags: api/walkthrough/searchbytags.md
-              - Iterate over Features: api/walkthrough/iterateoverfeatures.md
-              - Use Schema Validation: api/walkthrough/schemavalidation.md
-          - Developer Guide:
-              - Work with Spaces: api/devguide/workwithspaces.md
-              - Work with Features: api/devguide/workwithfeatures.md
-              - Tags: api/devguide/tagging.md
-              - Access Features: api/devguide/accessingfeatures.md
-              - Search for Features: api/devguide/propertiessearch.md
-              - Spatial Search for Features: api/devguide/spatialsearch.md
-              - Adjust searchable properties: api/devguide/searchableproperties.md
-              - Visualization and Clustering:
-                - viz: api/devguide/visualization.md
-                - hexbin (H3): api/devguide/hexbin.md
-                - quadbin: api/devguide/quadbin.md
-              - Work with Activity Log: api/devguide/activitylogguide.md
-              - Common Errors: api/devguide/commonerrors.md
-          - Advanced concepts: cli/datahub_add-on.md
-          - API Reference: api/apireference.md
-      - XYZ Maps JS:
-          - Overview: ui/index.md
-          - Get started: ui/gettingstarted.md
-          - Display your space: ui/yourxyzspace.md
-          - Style your data: ui/styleyourdata.md
-          - Add interactivity: ui/tapfeature.md
-      - Useful Links: api/links.md
-  - Tools:
+  - XYZ Maps API:
+      - Overview: api/index.md
+      - Quick Start:
+          - Read Spaces: api/quickstart/readspaces.md
+          - Create a Space: api/quickstart/createspace.md
+          - Write to a Space: api/quickstart/writetospace.md
+          - Use Activity Log: api/quickstart/activitylog.md
+      - Concepts:
+          - GeoJSON Basics: api/concepts/geojsonbasics.md
+          - Namespaces: api/concepts/namespaces.md
+          - Tags and Tagging: api/concepts/tags.md
+          - Tiles: api/concepts/tiles.md
+          - JSON Schema: api/concepts/jsonschema.md
+      - Walkthrough:
+          - Create a Space: api/walkthrough/creatingaspace.md
+          - Add and Delete Features: api/walkthrough/addinganddeleting.md
+          - Search by Bounding Box: api/walkthrough/searchbyboundingbox.md
+          - Search by Tags: api/walkthrough/searchbytags.md
+          - Iterate over Features: api/walkthrough/iterateoverfeatures.md
+          - Use Schema Validation: api/walkthrough/schemavalidation.md
+      - Developer Guide:
+          - Work with Spaces: api/devguide/workwithspaces.md
+          - Work with Features: api/devguide/workwithfeatures.md
+          - Tags: api/devguide/tagging.md
+          - Access Features: api/devguide/accessingfeatures.md
+          - Search for Features: api/devguide/propertiessearch.md
+          - Spatial Search for Features: api/devguide/spatialsearch.md
+          - Adjust searchable properties: api/devguide/searchableproperties.md
+          - Visualization and Clustering:
+              - viz: api/devguide/visualization.md
+              - hexbin (H3): api/devguide/hexbin.md
+              - quadbin: api/devguide/quadbin.md
+          - Work with Activity Log: api/devguide/activitylogguide.md
+          - Common Errors: api/devguide/commonerrors.md
+      - Advanced concepts: cli/datahub_add-on.md
+      - API Reference: api/apireference.md
+  - XYZ Maps UI:
+      - Overview: ui/index.md
+      - Get started: ui/gettingstarted.md
+      - Display your space: ui/yourxyzspace.md
+      - Style your data: ui/styleyourdata.md
+      - Add interactivity: ui/tapfeature.md
+  - XYZ Maps Tools:
       - XYZ Maps CLI:
           - Overview: cli/index.md
           - Basic features: cli/basic-features.md
@@ -91,7 +88,7 @@ nav:
           - Tutorials:
               - Shapefiles: cli/tutorials/shapefiles.md
               - Hexbins: cli/tutorials/cli_hexbins.md
-              - Group by in CSV : cli/tutorials/group_by.md
+              - Group by in CSV: cli/tutorials/group_by.md
           - Command reference: cli/command-reference.md
       - XYZ Space Invader: cli/space-invader/index.md
       - XYZ Spaces for Python: cli/tools#xyz-spaces-for-python
@@ -99,11 +96,9 @@ nav:
           - Overview: cli/viewer-tool/index.md
           - GeoJSON Basics: api/concepts/geojsonbasics.md
           - Advanced Features: cli/viewer-tool/advanced.md
-      - Open Datasets:
-          - Buildings: cli/topics/microsoft-buildings.md
-
-       
-
+  - Useful Links: api/links.md
+      # - Open Datasets:
+      #     - Buildings: cli/topics/microsoft-buildings.md
 
 # Extensions
 markdown_extensions:
@@ -135,4 +130,3 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-

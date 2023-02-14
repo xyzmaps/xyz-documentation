@@ -101,7 +101,7 @@ xyzmaps space show spaceID -w -t zoom11_hexbin
 
 For convenience, here is a link to that data. Note the `&tags=zoom11_hexbin` -- that tells the XYZ Maps API to only return features with that tag, and thus that zoom level.
 
-<http://geojson.tools/index.html?url=https://localhost:8080/hub/spaces/ZGAzaLaA/search?limit=5000&clientId=cli&tags=zoom11_hexbin&access_token=APwC9OKv8ww_zMGWqPTSQdg>
+<https://xyzmaps.github.io/geojson-tool/index.html?url=https://localhost:8080/hub/spaces/ZGAzaLaA/search?limit=5000&clientId=cli&tags=zoom11_hexbin&access_token=APwC9OKv8ww_zMGWqPTSQdg>
 
 ![xyz-hexbin-geojson-tools](../images/xyz-hexbin-geojson-tools.png)
 
@@ -170,7 +170,7 @@ This would count the unique values of the `street_type` property in each feature
 
 ![xyz-hexbin-space-invader](../images/hexbin_subgroup.png)
 
-For reference, [here is a sample of a subcount object](http://geojson.tools/index.html?url=https://localhost:8080/hub/spaces/qAtS3e8G/search?limit=5000&clientId=cli&tags=zoom10_centroid&access_token=AFbjoHrBlTB2K5_gqvcP_S8):
+For reference, [here is a sample of a subcount object](https://xyzmaps.github.io/geojson-tool/index.html?url=https://localhost:8080/hub/spaces/qAtS3e8G/search?limit=5000&clientId=cli&tags=zoom10_centroid&access_token=AFbjoHrBlTB2K5_gqvcP_S8):
 
 ```json
 "properties": {
