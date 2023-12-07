@@ -16,19 +16,11 @@ We started with the source data from Microsoft and processed it so that users of
 - supports maximum zoom in
 - allows exploration of the source data.
 
-Take a look [at a map created by XYZ Studio](https://studio.here.com/viewer/?project_id=c9884248-dbda-4c2b-a45c-8a46d0c7d3fb) filtered to focus on selected ZIP codes in San Francisco.
-
-This experience is possible because the data is in a XYZ Maps Space, something that we think makes sense for most large geospatial datasets.
-
-However, for those who want to get at the data directly, we have another option.
-
 XYZ worked with [geocode.earth](https://geocode.earth) to enhance the original Microsoft Building Footprint dataset to add admin attributes to each polygon. As a result, the enhanced dataset can be filtered by admin attribute to focus on the data of interest.
 
 The data is available in two formats – GeoJSON and GeoJSONL. ([Learn more about GeoJSONL over at interline.io](https://www.interline.io/blog/here-cli-supports-geojsonl/).) It maintains the [ODbL license granted by Microsoft](https://github.com/Microsoft/USBuildingFootprints/blob/master/LICENCE-DATA).
 
 Both formats can be efficiently uploaded to XYZ Maps Spaces using the XYZ Maps CLI using the `-s` streaming option.
-
-This geocoded dataset is also available in a shared XYZ Maps Space, `XHmWfTCt`, which available using access tokens from your own XYZ Maps account.
 
 You can use XYZ Maps tags to preview and extract various sub-regional admin levels, including `neighborhood`,`locality`, and `county`, along with `street` and `postalcode`. Some demonstration maps are provided below.
 

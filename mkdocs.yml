@@ -71,6 +71,7 @@ nav:
               - hexbin (H3): api/devguide/hexbin.md
               - quadbin: api/devguide/quadbin.md
           - Work with Activity Log: api/devguide/activitylogguide.md
+          - Microsoft buildings: cli/topics/microsoft-buildings.md
           - Common Errors: api/devguide/commonerrors.md
       - Advanced concepts: cli/datahub_add-on.md
       - API Reference: api/apireference.md
