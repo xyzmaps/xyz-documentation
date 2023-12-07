@@ -1,0 +1,2563 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Free Open Source Mapping Platform">
+      
+      
+        <meta name="author" content="XYZ Maps and contributors">
+      
+      
+        <link rel="canonical" href="https://xyzmaps.github.io/xyz-documentation/cli/command-reference/">
+      
+      
+        <link rel="prev" href="../tutorials/group_by/">
+      
+      
+        <link rel="next" href="../space-invader/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
+    
+    
+      
+        <title>Command reference - XYZ Maps - Open Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#xyz-maps-cli-command-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="XYZ Maps - Open Documentation" class="md-header__button md-logo" aria-label="XYZ Maps - Open Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XYZ Maps - Open Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Command reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xyzmaps/xyz-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xyzmaps/xyz-documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="XYZ Maps - Open Documentation" class="md-nav__button md-logo" aria-label="XYZ Maps - Open Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    XYZ Maps - Open Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xyzmaps/xyz-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xyzmaps/xyz-documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    XYZ Maps API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            XYZ Maps API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quick Start
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/quickstart/readspaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Read Spaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/quickstart/createspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a Space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/quickstart/writetospace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Write to a Space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/quickstart/activitylog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Activity Log
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/concepts/geojsonbasics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GeoJSON Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/concepts/namespaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Namespaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/concepts/tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags and Tagging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/concepts/tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/concepts/jsonschema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JSON Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Walkthrough
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Walkthrough
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/walkthrough/creatingaspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a Space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/walkthrough/addinganddeleting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add and Delete Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/walkthrough/searchbyboundingbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search by Bounding Box
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/walkthrough/searchbytags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search by Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/walkthrough/iterateoverfeatures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Iterate over Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/walkthrough/schemavalidation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Schema Validation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Developer Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Developer Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/workwithspaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work with Spaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/workwithfeatures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work with Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/tagging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/accessingfeatures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/propertiessearch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search for Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/spatialsearch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spatial Search for Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/searchableproperties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adjust searchable properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_8" id="__nav_3_5_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualization and Clustering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Visualization and Clustering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    viz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/hexbin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hexbin (H3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/quadbin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quadbin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/activitylogguide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work with Activity Log
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/microsoft-buildings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft buildings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/devguide/commonerrors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Errors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datahub_add-on/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/apireference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    XYZ Maps UI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            XYZ Maps UI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/gettingstarted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/yourxyzspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display your space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/styleyourdata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Style your data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/tapfeature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add interactivity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    XYZ Maps Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            XYZ Maps Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    XYZ Maps CLI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            XYZ Maps CLI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-on/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add-on features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_4" id="__nav_5_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/shapefiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shapefiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/cli_hexbins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hexbins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/group_by/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group by in CSV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Command reference
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Command reference
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xyzmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      xyzmaps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="xyzmaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#space" class="md-nav__link">
+    <span class="md-ellipsis">
+      space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      create
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    <span class="md-ellipsis">
+      show
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualize" class="md-nav__link">
+    <span class="md-ellipsis">
+      virtualize
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hexbin" class="md-nav__link">
+    <span class="md-ellipsis">
+      hexbin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gis" class="md-nav__link">
+    <span class="md-ellipsis">
+      gis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv2geo" class="md-nav__link">
+    <span class="md-ellipsis">
+      csv2geo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../space-invader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XYZ Space Invader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools#xyz-spaces-for-python" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XYZ Spaces for Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GeoJSON Viewer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            GeoJSON Viewer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viewer-tool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/concepts/geojsonbasics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GeoJSON Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viewer-tool/advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful Links
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xyzmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      xyzmaps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="xyzmaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#space" class="md-nav__link">
+    <span class="md-ellipsis">
+      space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      create
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    <span class="md-ellipsis">
+      show
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualize" class="md-nav__link">
+    <span class="md-ellipsis">
+      virtualize
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hexbin" class="md-nav__link">
+    <span class="md-ellipsis">
+      hexbin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gis" class="md-nav__link">
+    <span class="md-ellipsis">
+      gis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv2geo" class="md-nav__link">
+    <span class="md-ellipsis">
+      csv2geo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="xyz-maps-cli-command-reference">XYZ Maps CLI Command Reference<a class="headerlink" href="#xyz-maps-cli-command-reference" title="Permanent link">&para;</a></h1>
+<p>In this section you can find all the supported commands and subcommands along with supported options.</p>
+<div class="admonition warning">
+<p class="admonition-title">XYZ CLI is not fully updated</p>
+<p>XYZ CLI is currently being updated to reflect the fork and resulting changes
+in moving to a <strong>free and open source version of XYZ Maps</strong>. </p>
+</div>
+<h2 id="xyzmaps">xyzmaps<a class="headerlink" href="#xyzmaps" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="go">Commands:</span>
+<span class="go">  space|xs [list|create|upload]             work with XYZ Maps spaces</span>
+<span class="go">  transform|tf [csv2geo|shp2geo|gpx2geo]  convert from csv/shapefile/gpx to geojson</span>
+<span class="go">  help [command]                          display help for command</span>
+</code></pre></div>
+<h3 id="space"><a href="../basic-features/#interact-with-data-hub-spaces">space</a><a class="headerlink" href="#space" title="Permanent link">&para;</a></h3>
+<p>XYZ Maps Space related operations</p>
+<div class="highlight"><pre><span></span><code><span class="go">Commands:</span>
+<span class="go">  list|ls [options]        information about available XYZ Maps Spaces</span>
+<span class="go">  analyze [options] &lt;id&gt;   property based analysis of the content of the</span>
+<span class="go">                           given [id]</span>
+<span class="go">  hexbin [options] &lt;id&gt;    create fixed height hexbins (and their centroids)</span>
+<span class="go">                           using points in a XYZ Maps space, and upload them to</span>
+<span class="go">                           another space</span>
+<span class="go">  show [options] &lt;id&gt;      shows the content of the given [id]</span>
+<span class="go">  delete [options] &lt;id&gt;    delete the XYZ Maps Space with the given id</span>
+<span class="go">  create [options]         create a new XYZ Maps Space</span>
+<span class="go">  clear [options] &lt;id&gt;     clear data from XYZ Maps Space</span>
+<span class="go">  token [options]          list all XYZ Maps tokens</span>
+<span class="go">  upload [options] [id]    upload GeoJSON, CSV, or a Shapefile to the given</span>
+<span class="go">                           id -- if no spaceID is given, a new Space will be</span>
+<span class="go">                           created</span>
+<span class="go">  config [options] [id]    configure/view advanced XYZ Maps features for</span>
+<span class="go">                           space</span>
+<span class="go">  join [options] &lt;id&gt;      {XYZ Maps Add-on} create a new virtual XYZ Maps</span>
+<span class="go">                           space with a CSV and a Space with geometries,</span>
+<span class="go">                           associating by feature ID</span>
+<span class="go">  virtualize|vs [options]  {XYZ Maps Add-on} create a new virtual XYZ Maps</span>
+<span class="go">                           space</span>
+<span class="go">  gis [options] &lt;id&gt;       {XYZ Maps Add-on} perform gis operations with</span>
+<span class="go">                           Space data</span>
+<span class="go">  help [command]           display help for command</span>
+</code></pre></div>
+<h4 id="create"><a href="../basic-features/#create-a-new-space">create</a><a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
+<p>Create a new XYZ Maps Space.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  -t, --title [title]       Title for Space</span>
+<span class="go">  -d, --message [message]   Short description</span>
+<span class="go">  -s, --schema [schemadef]  set json schema definition (local filepath / http</span>
+<span class="go">                            link) for your Space, all future data for this</span>
+<span class="go">                            Space will be validated for the schema</span>
+<span class="go">  -h, --help                display help for command</span>
+</code></pre></div>
+<h4 id="list"><a href="../basic-features/#list-spaces">list</a><a class="headerlink" href="#list" title="Permanent link">&para;</a></h4>
+<p>Information about available XYZ Maps spaces</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  -r, --raw          show raw Space definition</span>
+<span class="go">  --filter &lt;filter&gt;  a comma separted strings to filter Spaces</span>
+<span class="go">  -p, --prop &lt;prop&gt;  property fields to include in table (default: [])</span>
+<span class="go">  -h, --help         display help for command</span>
+</code></pre></div>
+<h4 id="show"><a href="../basic-features/#show-contents-of-a-space">show</a><a class="headerlink" href="#show" title="Permanent link">&para;</a></h4>
+<p>Shows the contents of the given XYZ Maps Space.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  -l, --limit &lt;limit&gt;        Number of objects to be fetched</span>
+<span class="go">  -o, --offset &lt;offset&gt;      The offset / handle to continue the iteration</span>
+<span class="go">  -t, --tags &lt;tags&gt;          Tags to filter on</span>
+<span class="go">  -r, --raw                  show raw Space content</span>
+<span class="go">  --all                      iterate over entire Space to get entire</span>
+<span class="go">                             data of space, output will be shown on the console</span>
+<span class="go">                             in geojson format</span>
+<span class="go">  --geojsonl                 to print output of --all in geojsonl format</span>
+<span class="go">  -c, --chunk [chunk]        chunk size to use in --all option, default 5000</span>
+<span class="go">  -p, --prop &lt;prop&gt;          selection of properties, use p.&lt;FEATUREPROP&gt; or</span>
+<span class="go">                             f.&lt;id/updatedAt/tags/createdAt&gt;</span>
+<span class="go">  -w, --web                  display Space on xyzmaps.github.io/geojson-tool/</span>
+<span class="go">  -v, --vector               inspect and analyze using XYZ Maps Space Invader</span>
+<span class="go">                             on xyzmaps.github.io/xyz-space-invader</span>
+<span class="go">  -x, --permanent            generate a permanent token for --web and --vector option</span>
+<span class="go">  -s, --search &lt;propfilter&gt;  search expression in &quot;double quotes&quot;, use single</span>
+<span class="go">                             quote to signify string value,  use</span>
+<span class="go">                             p.&lt;FEATUREPROP&gt; or f.&lt;id/updatedAt/tags/createdAt&gt;</span>
+<span class="go">                             (Use &#39;+&#39; for AND , Operators : &gt;,&lt;,&lt;=,&lt;=,=,!=)</span>
+<span class="go">                             (use comma separated values to search multiple</span>
+<span class="go">                             values of a property) {e.g.,</span>
+<span class="go">                             &quot;p.name=John,Tom+p.age&lt;50+p.phone=&#39;9999999&#39;+p.zipcode=123456&quot;}</span>
+<span class="go">  --spatial                  indicate to make spatial search on the space</span>
+<span class="go">  --radius &lt;radius&gt;          make a radius spatial search using --center, </span>
+<span class="go">                             or thicken an input line or polygon (in meters)</span>
+<span class="go">  --center &lt;center&gt;          comma separated, double quoted lon,lat values to specify the</span>
+<span class="go">                             center point for radius search</span>
+<span class="go">  --feature &lt;feature&gt;        comma separated spaceid,featureid values to</span>
+<span class="go">                             specify reference geometry (taken from feature)</span>
+<span class="go">                             for spatial query</span>
+<span class="go">  --geometry &lt;geometry&gt;      geometry file to upload for spatial query (single</span>
+<span class="go">                             feature in geojson file)</span>
+<span class="go">  -h, --help                 display help for command</span>
+</code></pre></div>
+<h4 id="upload"><a href="../basic-features/#uploadupdate-data-to-a-space">upload</a><a class="headerlink" href="#upload" title="Permanent link">&para;</a></h4>
+<p>Upload GeoJSON, CSV, or a Shapefile to the given Space -- if no spaceID is given, a new space will be created. GeoJSON feature IDs will be respected unless you override with -o or specify with -i; pipe GeoJSON via stdout using | xyzmaps space upload spaceid</p>
+<div class="highlight"><pre><span></span><code><span class="go">  -f, --file &lt;file&gt;               comma separated list of local GeoJSON,</span>
+<span class="go">                                  GeoJSONL, Shapefile, CSV, GPX, or XLS/X files (or</span>
+<span class="go">                                  GeoJSON/CSV URLs); use a directory path and</span>
+<span class="go">                                  --batch [filetype] to upload all files of</span>
+<span class="go">                                  that type within a directory</span>
+<span class="go">  -c, --chunk [chunk]             chunk size, default 200 -- use smaller values</span>
+<span class="go">                                  (1 to 10) to allow safer uploads of very</span>
+<span class="go">                                  large geometries (big polygons, many</span>
+<span class="go">                                  properties), use higher values (e.g., 500 to</span>
+<span class="go">                                  5000) for faster uploads of small geometries</span>
+<span class="go">                                  (points and lines, few properties)</span>
+<span class="go">  -t, --tags [tags]               fixed tags for features uploaded to the XYZ Maps space</span>
+<span class="go">  --token &lt;token&gt;                 a external token to upload data to another</span>
+<span class="go">                                  user&#39;s Space</span>
+<span class="go">  -x, --lon [lon]                 longitude field name</span>
+<span class="go">  -y, --lat [lat]                 latitude field name</span>
+<span class="go">  -z, --point [point]             points field name with coordinates like</span>
+<span class="go">                                  (Latitude,Longitude) e.g., (37.7,-122.4)</span>
+<span class="go">  --lonlat                        parse a -—point/-z csv field as (lon,lat)</span>
+<span class="go">                                  instead of (lat,lon)</span>
+<span class="go">  -p, --ptag [ptag]               property name(s) to be used to add tags,</span>
+<span class="go">                                  property_name@value, best for a small number of</span>
+<span class="go">                                  quantitative values</span>
+<span class="go">  -i, --id [id]                   property name(s) to be used as the feature ID</span>
+<span class="go">                                  (must be unique) -- multiple values can be</span>
+<span class="go">                                  comma separated</span>
+<span class="go">  -a, --assign                    interactive mode to analyze and select fields</span>
+<span class="go">                                  to be used as tags and unique feature IDs</span>
+<span class="go">  -o, --override                  override existing GeoJSON feature ID and </span>
+<span class="go">                                  generate property hash as feature ID</span>
+<span class="go">  -s, --stream                    streaming support for upload  and/or large</span>
+<span class="go">                                  csv and geojson uploads using concurrent</span>
+<span class="go">                                  writes, tune chunk size with -c</span>
+<span class="go">  -d, --delimiter [,]             alternate delimiter used in CSV (default:</span>
+<span class="go">                                  &quot;,&quot;)</span>
+<span class="go">  -q, --quote [&quot;]                 quote used in CSV (default: &quot;\&quot;&quot;)</span>
+<span class="go">  -e, --errors                    print data upload errors</span>
+<span class="go">  --string-fields &lt;stringFields&gt;  property name(s) of CSV string fields *not*</span>
+<span class="go">                                  to be automatically converted into numbers or</span>
+<span class="go">                                  booleans (e.g., number-like census geoids,</span>
+<span class="go">                                  postal codes with leading zeros)</span>
+<span class="go">  --groupby &lt;groupby&gt;             consolidate multiple rows of a CSV into a</span>
+<span class="go">                                  single feature based on a unique ID</span>
+<span class="go">                                  designated with -i; values of each row within</span>
+<span class="go">                                  the selected column will become top level</span>
+<span class="go">                                  properties within the consolidated feature</span>
+<span class="go">  --promote &lt;promote&gt;             comma separated column names which should not be nested within a top level property generated consolidated by --groupby</span>
+<span class="go">  --flatten                       stores the --groupby consolidated output in flattened string separated by colon (:) instead of a nested object</span>
+<span class="go">  --date &lt;date&gt;                   date-related property name(s) of a feature to</span>
+<span class="go">                                  be normalized as a ISO 8601 datestring</span>
+<span class="go">                                  (datahub_iso8601_[propertyname]), and unix</span>
+<span class="go">                                  timestamp (datahub_timestamp_[propertyname]</span>
+<span class="go">  --datetag [datetagString]       comma separated list of granular date tags to</span>
+<span class="go">                                  be added via --date. possible options - year,</span>
+<span class="go">                                  month, week, weekday, year_month, year_week,</span>
+<span class="go">                                  hour</span>
+<span class="go">  --dateprops [datepropsString]   comma separated list of granular date</span>
+<span class="go">                                  properties to be added via --date. possible</span>
+<span class="go">                                  options - year, month, week, weekday,</span>
+<span class="go">                                  year_month, year_week, hour</span>
+<span class="go">  --noCoords                      upload CSV files with no coordinates,</span>
+<span class="go">                                  generates null geometry (best used with -i</span>
+<span class="go">                                  and virtual spaces)</span>
+<span class="go">  --history [history]             repeat commands previously used to upload</span>
+<span class="go">                                  data to a space; save and recall a specific</span>
+<span class="go">                                  command using &quot;--history save&quot; and &quot;--history</span>
+<span class="go">                                  fav&quot;</span>
+<span class="go">  --batch [batch]                 upload all files of the same type within a</span>
+<span class="go">                                  directory; specify &quot;--batch</span>
+<span class="go">                                  [geojson|geojsonl|csv|shp|gpx]&quot; (will inspect</span>
+<span class="go">                                  shapefile subdirectories). select directory</span>
+<span class="go">                                  with -f</span>
+<span class="go">  -h, --help                      display help for command</span>
+</code></pre></div>
+<h4 id="clear"><a href="../basic-features/#clear-a-space">clear</a><a class="headerlink" href="#clear" title="Permanent link">&para;</a></h4>
+<p>Clear data from a XYZ Maps Space.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  -t, --tags &lt;tags&gt;  tags for the Space</span>
+<span class="go">  -i, --ids &lt;ids&gt;    ids for the Space</span>
+<span class="go">  --force            skip the confirmation prompt</span>
+<span class="go">  -h, --help         display help for command</span>
+</code></pre></div>
+<h4 id="delete"><a href="../basic-features/#delete-a-space">delete</a><a class="headerlink" href="#delete" title="Permanent link">&para;</a></h4>
+<p>Delete a given Space.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  --force          skip the confirmation prompt</span>
+<span class="go">  -h, --help       display help for command</span>
+</code></pre></div>
+<h4 id="config"><a href="../basic-features/#get-or-update-more-information-about-your-spaces">config</a><a class="headerlink" href="#config" title="Permanent link">&para;</a></h4>
+<p>Configure/view advanced XYZ Maps features for a Space.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  --shared &lt;flag&gt;             set your space as shared / public (default is</span>
+<span class="go">                              false)</span>
+<span class="go">  --readonly &lt;flag&gt;.          set your space as readOnly (default is false)</span>
+<span class="go">  -t,--title [title]          set title for the Space</span>
+<span class="go">  -d,--message [message]      set description for the Space</span>
+<span class="go">  -c,--copyright [copyright]  set copyright text for the Space</span>
+<span class="go">  --cacheTTL &lt;cacheTTL&gt;       set cacheTTL value for the Space with valid</span>
+<span class="go">                              number</span>
+<span class="go">  --stats                     see detailed space statistics</span>
+<span class="go">  -r, --raw                   show raw json output</span>
+<span class="go">  -s,--schema [schemadef]     view or set schema definition (local filepath /</span>
+<span class="go">                              http link) for your Space, applicable on future</span>
+<span class="go">                              data, use with add/delete/update</span>
+<span class="go">  --searchable                view or configure searchable properties of a</span>
+<span class="go">                              Space, use with add/delete/update</span>
+<span class="go">  --tagrules                  add, remove, view the conditional rules to tag</span>
+<span class="go">                              your features automatically, use with</span>
+<span class="go">                              add/delete/update -- at present all tag rules</span>
+<span class="go">                              will be applied synchronously before features are</span>
+<span class="go">                              stored ( mode : sync )</span>
+<span class="go">  --delete                    use with schema/searchable/tagrules options to</span>
+<span class="go">                              remove the respective configurations</span>
+<span class="go">  --add                       use with schema/searchable/tagrules options to</span>
+<span class="go">                              add/set the respective configurations</span>
+<span class="go">  --update                    use with tagrules options to update the</span>
+<span class="go">                              respective configurations</span>
+<span class="go">  --view                      use with schema/searchable/tagrules options to</span>
+<span class="go">                              view the respective configurations</span>
+<span class="go">  --activitylog               configure activity logs for your Space</span>
+<span class="go">                              interactively</span>
+<span class="go">  --console                   opens web console for XYZ Maps</span>
+<span class="go">  -h, --help                  display help for command</span>
+</code></pre></div>
+<h4 id="virtualize"><a href="../add-on/#virtual-spaces">virtualize</a><a class="headerlink" href="#virtualize" title="Permanent link">&para;</a></h4>
+<p>Create a new virtual Space.</p>
+<div class="highlight"><pre><span></span><code>Options:
+  -t, --title [title]         Title for virtual Space
+  -d, --message [message]     set description for the Space
+  -g, --group [spaceids]      Group the Spaces (all objects of each space will
+                              be part of the response) - enter comma separated
+                              Space ids
+  -a, --associate [spaceids]  Associate the Spaces. Features with same id will
+                              be merged into one feature. Enter comma separated
+                              space ids [space1,space2] -- space1 properties
+                              will be merged into space2 features.
+  -h, --help                  display help for command
+</code></pre></div>
+<h4 id="join"><a href="../add-on/#join-virtual-spaces">join</a><a class="headerlink" href="#join" title="Permanent link">&para;</a></h4>
+<p>Create a new virtual Space with a CSV and a space with geometries, associating by feature ID.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  -f, --file &lt;file&gt;               csv to be uploaded and associated</span>
+<span class="go">  -i, --keyField &lt;keyField&gt;       field in csv file to become feature id</span>
+<span class="go">  -x, --lon [lon]                 longitude field name</span>
+<span class="go">  -y, --lat [lat]                 latitude field name</span>
+<span class="go">  -z, --point [point]             points field name with coordinates like</span>
+<span class="go">                                  (Latitude,Longitude) e.g., (37.7,-122.4)</span>
+<span class="go">  --lonlat                        parse a —point/-z csv field as (lon,lat)</span>
+<span class="go">                                  instead of (lat,lon)</span>
+<span class="go">  -d, --delimiter [,]             alternate delimiter used in csv (default:</span>
+<span class="go">                                  &quot;,&quot;)</span>
+<span class="go">  -q, --quote [&quot;]                 quote used in csv (default: &quot;\&quot;&quot;)</span>
+<span class="go">  --token &lt;token&gt;                 a external token to create another user&#39;s</span>
+<span class="go">                                  Spaces</span>
+<span class="go">  -s, --stream                    streaming data for faster uploads and large</span>
+<span class="go">                                  csv support</span>
+<span class="go">  --string-fields &lt;stringFields&gt;  property name(s) of CSV string fields *not*</span>
+<span class="go">                                  to be automatically converted into numbers or</span>
+<span class="go">                                  booleans (e.g., number-like census geoids,</span>
+<span class="go">                                  postal codes with leading zeros)</span>
+<span class="go">  --groupby &lt;groupby&gt;             consolidate multiple rows of a CSV into a</span>
+<span class="go">                                  single feature based on a unique ID</span>
+<span class="go">                                  designated with -i; values of each row within</span>
+<span class="go">                                  the selected column will become top level</span>
+<span class="go">                                  properties within the consolidated feature</span>
+<span class="go">  -h, --help                      display help for command</span>
+</code></pre></div>
+<h4 id="hexbin"><a href="../add-on/#hexbin">hexbin</a><a class="headerlink" href="#hexbin" title="Permanent link">&para;</a></h4>
+<p>Create fixed height hexbins (and their centroids) using points in a Space, and upload them to another Space.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  -c, --cellsize &lt;cellsize&gt;      size of hexgrid cells in meters,</span>
+<span class="go">                                 comma-separate multiple values</span>
+<span class="go">  -i, --ids                      add IDs of features counted within the hexbin</span>
+<span class="go">                                 as an array in the hexbin&#39;s feature property</span>
+<span class="go">  -p, --groupBy &lt;groupBy&gt;        name of the feature property by which hexbin</span>
+<span class="go">                                 counts will be further grouped</span>
+<span class="go">  -a, --aggregate &lt;aggregate&gt;    name of the feature property used for</span>
+<span class="go">                                 aggregating sum value of all the features</span>
+<span class="go">                                 inside a hexbin</span>
+<span class="go">  -r, --readToken &lt;readToken&gt;    token of another user&#39;s source space, from</span>
+<span class="go">                                 which points will be read</span>
+<span class="go">  -w, --writeToken &lt;writeToken&gt;  token of another user&#39;s target space to which</span>
+<span class="go">                                 hexbins will be written</span>
+<span class="go">  -t, --tags &lt;tags&gt;              only make hexbins for features in the source</span>
+<span class="go">                                 space that match the specific tag(s),</span>
+<span class="go">                                 comma-separate multiple values</span>
+<span class="go">  -b, --bbox [bbox]              only create hexbins for records inside the</span>
+<span class="go">                                 bounding box specified either by individual</span>
+<span class="go">                                 coordinates provided interactively or as</span>
+<span class="go">                                 minLon,minLat,maxLon,maxLat (use “\ “ to</span>
+<span class="go">                                 escape a bbox with negative coordinate(s))</span>
+<span class="go">  -l, --latitude &lt;latitude&gt;      latitude which will be used for converting</span>
+<span class="go">                                 cellSize from meters to degrees</span>
+<span class="go">  -z, --zoomLevels &lt;zoomLevels&gt;  hexbins optimized for zoom levels (1-18) -</span>
+<span class="go">                                 comma separate multiple values(-z 8,10,12) or</span>
+<span class="go">                                 dash for continuous range(-z 10-15)</span>
+<span class="go">  -h, --help                     display help for command</span>
+</code></pre></div>
+<h4 id="gis"><a href="../add-on/#gis">gis</a><a class="headerlink" href="#gis" title="Permanent link">&para;</a></h4>
+<p>Perform GIS operations with space data.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  --centroid             calculates centroids of Line and Polygon features and</span>
+<span class="go">                         uploads in a different Space</span>
+<span class="go">  --length               calculates length of LineString features and adds new properties</span>
+<span class="go">  --area                 calculates area of Polygon features and adds new properties</span>
+<span class="go">  --voronoi              calculates Voronoi Polygons of point features and</span>
+<span class="go">                         uploads in different Space</span>
+<span class="go">  --tin                  calculates Delaunay Polygons of point features and</span>
+<span class="go">                         uploads in different Space</span>
+<span class="go">  --property &lt;property&gt;  populates Delaunay polygons&#39; properties based on the</span>
+<span class="go">                         specified feature property</span>
+<span class="go">  -c, --chunk [chunk]    chunk size, default 20 -- default for polygons,</span>
+<span class="go">                         increase for faster point feature uploads</span>
+<span class="go">  -t, --tags &lt;tags&gt;      source Space tags to filter on</span>
+<span class="go">  --samespace            option to upload centroids/voronoi/tin to same Space,</span>
+<span class="go">                         use tags to filter</span>
+<span class="go">  -h, --help             display help for command</span>
+</code></pre></div>
+<h3 id="transform">transform<a class="headerlink" href="#transform" title="Permanent link">&para;</a></h3>
+<p>Transform various file formats to geojson.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Commands:</span>
+<span class="go">  csv2geo [options] &lt;path&gt;  convert csv to geojson</span>
+<span class="go">  shp2geo &lt;path&gt;            convert shapefile to geojson</span>
+<span class="go">  gpx2geo &lt;path&gt;            convert gpx to geojson</span>
+<span class="go">  help [command]            display help for command</span>
+</code></pre></div>
+<h4 id="csv2geo">csv2geo<a class="headerlink" href="#csv2geo" title="Permanent link">&para;</a></h4>
+<p>Convert a csv file to geojson.</p>
+<div class="highlight"><pre><span></span><code><span class="go">Options:</span>
+<span class="go">  -y, --lat [lat]                 latitude field name</span>
+<span class="go">  -x, --lon [lon]                 longitude field name</span>
+<span class="go">  -d, --delimiter [,]             delimiter used in csv (default: &quot;,&quot;)</span>
+<span class="go">  -q, --quote [&quot;]                 quote used in csv (default: &quot;\&quot;&quot;)</span>
+<span class="go">  -z, --point [point]             points field name</span>
+<span class="go">  --string-fields &lt;stringFields&gt;  comma seperated property names which needs to</span>
+<span class="go">                                  be converted as String even though they are</span>
+<span class="go">                                  numbers or boolean e.g. postal code</span>
+<span class="go">  -h, --help                      display help for command</span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022-2023 XYZ Maps and contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.cd18aaf1.min.js"></script>
+      
+    
+  </body>
+</html>
